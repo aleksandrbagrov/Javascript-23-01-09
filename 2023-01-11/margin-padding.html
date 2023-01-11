@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin ir Padding savybės</title>
+    <style>
+        .box {
+            width: 250px;
+            height: 250px;
+            background: tomato;
+        }
+
+        .margin {
+            /* Norint atitraukti elementą per 15px iš visų kraštų. */
+            /* margin: 15px; */
+            /* Norint atitraukti elementą iš apačios per 15px */
+            /* margin-bottom: 15px; */
+            /* top, left, right, bottom variacios margin savybei */
+            /* Norint atitraukti elementą iš kairės pusės per 15px */
+            /* Pirmoji reikšmė viršus
+            Antroji dešinė
+            Trečioji apačia
+            Ketvirtoji kairė */
+            /* margin: 0 0 0 15px; */
+            /* Jeigu nurodoma tik viena reikšmė - savybė pritaikoma visoms kraštinėms
+            Jeigu dvi, pirmoji viršus - apačia, antroji kairė dešinė.
+            Jeigu trys pirmoji viršus, antroji kairė dešinė, trečioji apačia. */
+            margin: 15px 30px 60px 30px;
+        }
+
+        .padding {
+            padding: 30px;
+            /* border-box reikšmė nurodo, kad padding reikšmės dydis neturi būti įskaičiuotas bendrame plotyje arba aukštyje */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box margin"></div>
+    <div class="box padding">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat eveniet tenetur est eligendi cum, dolore impedit repellendus eius velit ducimus?</div>
+</body>
+</html>

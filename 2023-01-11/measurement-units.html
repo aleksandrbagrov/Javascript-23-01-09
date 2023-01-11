@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matavimo vienetai</title>
+    <style>
+        html {
+            font-size: 20px;
+        }
+        body {
+            margin: 0;
+        }
+        .parent {
+            width: 800px;
+        }
+        .child {
+            width: 100vw;
+            height: 100vh;
+            background-color: red;
+        }
+
+        .rem-parent {
+            font-size: 40px;
+            float: right;
+        }
+
+        .rem {
+            width: 10rem;
+            height: 10rem;
+            background-color: blue;
+        }
+
+        .em-parent {
+            font-size: 45px;
+            float: right;
+        }
+
+        .em {
+            width: 10em;
+            height: 10em;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+    <div class="em-parent">
+        <div class="em"></div>
+    </div>
+    <!-- Rem matavimo vienetas atsižvelgia į html elementui priskirtą šrifto dydį -->
+    <div class="rem-parent">
+        <div class="rem"></div>
+    </div>
+</body>
+</html>
