@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teksto formatavimas su CSS</title>
+    <style>
+        .strong {
+            /* šrifto storis gali būti matuojamas skaičiais nuo 100 iki 900 */
+            /* font-weight: normal; */
+            font-weight: bold;
+        }
+
+        .italic {
+            /* norint paversti tekstą į šoną */
+            font-style: italic;
+        }
+
+        .mark {
+            background-color: aqua;
+        }
+
+        .small {
+            /* font-size: small; */
+            /* font-size: 80%; */
+            font-size: 13px;
+        }
+
+        .del {
+            /* Norint perbraukti teksta */
+            text-decoration: line-through;
+        }
+
+        .ins {
+            /* norint pabraukti tekstą */
+            text-decoration: underline;
+        }
+
+        .sub {
+            font-size: smaller;
+            vertical-align: sub;
+        }
+
+        .sup {
+            font-size: smaller;
+            vertical-align: super;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .box {
+            background-color: aqua;
+            width: 50%;
+            padding: 2rem;
+            text-decoration: line-through;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, quae?</h1>
+    <p><span class="strong">Lorem ipsum dolor sit</span> amet consectetur adipisicing elit. <span class="italic">Aut odio nihil, distinctio eligendi veritatis</span> odit repellendus! Omnis dolore fugit, iure soluta veritatis tempore! Est dolore quis aperiam. Vel quod mollitia id reiciendis, suscipit harum sequi ipsa pariatur quis enim at repellat et consequatur, voluptatum debitis ex recusandae. Nulla, hic exercitationem.</p>
+    <p>Lorem ipsum dolor sit amet consectetur <span class="mark">adipisicing elit.</span> Cumque officia placeat rem incidunt illum. Magnam, perferendis doloremque? Iusto aspernatur dolor vitae minus incidunt maiores quidem, exercitationem libero possimus non officiis repellendus vero suscipit ad dolores beatae architecto, itaque voluptatum ipsum, iste assumenda alias quam ex. Tempora ea repudiandae, minus fuga deleniti, repellat, deserunt ducimus qui non itaque eos quasi quo eligendi? Impedit eligendi cumque iure accusantium ratione veniam dicta quos dolorem sint id, maiores, explicabo amet debitis molestias delectus qui enim eum illo excepturi magnam? Ea aspernatur ratione amet, quam velit eveniet earum adipisci itaque commodi exercitationem temporibus obcaecati reprehenderit?</p>
+    <p>Lorem ipsum dolor, <span class="small">sit amet consectetur adipisicing elit.</span> Architecto id, odio praesentium cum possimus odit iste reprehenderit alias dicta porro. Maiores explicabo impedit iusto quas quidem optio, commodi repudiandae porro!</p>
+    <p><span class="del">Lorem ipsum, dolor sit amet consectetur</span> adipisicing elit. Error, nostrum. Beatae ipsam eaque cum doloribus necessitatibus cumque <ins>sequi deserunt dolorem minus ducimus.</ins> Tenetur voluptatem quas ipsa deserunt. Totam minus nostrum rerum eveniet quia, at aut libero sit dolor culpa velit quod sunt perferendis labore veritatis consequuntur quos eum distinctio blanditiis exercitationem. Repudiandae libero eligendi aperiam eveniet rem iste asperiores nesciunt laudantium. Eius beatae illum iusto consequuntur earum eum aliquam quibusdam.</p>
+    <p>2<span class="sub">2</span></p>
+    <p>2<span class="sup">2</span></p>
+    <a href="https://google.com">Nuoroda</a>
+    <div class="box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, rem.
+    </div>
+</body>
+</html>

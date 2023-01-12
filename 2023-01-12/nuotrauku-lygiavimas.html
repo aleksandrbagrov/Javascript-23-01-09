@@ -8,9 +8,45 @@
     <style>
         body {
             text-align: center;
+            margin: 0;
         }
         img {
             width: 150px;
+        }
+        .alignment {
+            margin-bottom: 3rem;
+            /* display: flex savybė nurodo, jog viduje esantys elementai bus išpoziciuonuoti vienoje eilėje arba pagal flex parametrų taisykles */
+            display: flex;
+            /* justify-content: start; - Nurodome, kad vidiniai elementai būtų lygiuojami į kairę pusę.
+            justify-content: end; - Nurodome, kad vidiniai elementai būtų lygiuojami į dešinę pusę.
+            justify-content: center; - Nurodome, kad vidiniai elementai būtų centruojami.
+            justify-content: space-between; - pozicionuoja elementus prigludusius prie elemento kraštų.
+            justify-content: space-around; - pozicionuoja elementus atitrauktus nuo elemento kraštų.
+            justify-content: space-evenly; - pozicionuoja elementus su vienodais tarpais tarpusavyje.
+            justify-content veikia tik prijungus display: flex savybę 
+            */
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .box {
+            display: flex;
+            justify-content: center;
+            width: 33.3%;
+            height: 300px;
+            background-color: red;
+            /* align-items: start; - Nurodome, kad vidiniai elementai būtų vertikaliai lygiuojami į kairę pusę.
+            align-items: end; - Nurodome, kad vidiniai elementai būtų vertikaliailygiuojami į dešinę pusę.
+            align-items: center; - Nurodome, kad vidiniai elementai būtų vertikaliai centruojami. */
+            align-items: center;
+        }
+        .box img {
+            width: 200px;
+            object-fit: contain;
+        }
+        .image-text img {
+            width: 300px;
+            float: right;
+            margin-left: 2rem;
         }
     </style>
 </head>
@@ -30,5 +66,24 @@
     <img src="images/3.jpg" alt="Tai yra antis">
     <img src="images/4.jpg" alt="Tai yra antis">
     <img src="images/5.jpg" alt="Tai yra antis">
+
+    <div class="alignment">
+        <div class="box">
+            <img src="images/5.jpg" alt="Tai yra antis">
+        </div>
+        <div class="box">
+            <img src="images/3.jpg" alt="Tai yra antis">
+        </div>
+        <div class="box">
+            <img src="images/1.jpg" alt="Tai yra antis">
+        </div>
+    </div>
+
+    <div class="image-text">
+        <img src="images/4.jpg" alt="Tai yra antis">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut corporis ut, ipsa sunt quos, in sint illum accusamus, quibusdam voluptas quod ipsam debitis iste autem delectus alias provident! Officia ducimus illum harum, quia molestiae beatae sint odit ratione laudantium sunt pariatur. Ipsa sit aspernatur accusamus molestias commodi culpa reiciendis saepe, explicabo iste nam odio, ad pariatur ea laboriosam. Asperiores ab at odio molestias vitae tenetur aperiam vel minus error dolor maxime quas harum aspernatur ullam totam dolore magnam pariatur rem, porro excepturi. Neque totam at laudantium autem aperiam corrupti aliquam repellendus accusantium repellat id culpa omnis eaque magni, dolorum rerum?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut corporis ut, ipsa sunt quos, in sint illum accusamus, quibusdam voluptas quod ipsam debitis iste autem delectus alias provident! Officia ducimus illum harum, quia molestiae beatae sint odit ratione laudantium sunt pariatur. Ipsa sit aspernatur accusamus molestias commodi culpa reiciendis saepe, explicabo iste nam odio, ad pariatur ea laboriosam. Asperiores ab at odio molestias vitae tenetur aperiam vel minus error dolor maxime quas harum aspernatur ullam totam dolore magnam pariatur rem, porro excepturi. Neque totam at laudantium autem aperiam corrupti aliquam repellendus accusantium repellat id culpa omnis eaque magni, dolorum rerum?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut corporis ut, ipsa sunt quos, in sint illum accusamus, quibusdam voluptas quod ipsam debitis iste autem delectus alias provident! Officia ducimus illum harum, quia molestiae beatae sint odit ratione laudantium sunt pariatur. Ipsa sit aspernatur accusamus molestias commodi culpa reiciendis saepe, explicabo iste nam odio, ad pariatur ea laboriosam. Asperiores ab at odio molestias vitae tenetur aperiam vel minus error dolor maxime quas harum aspernatur ullam totam dolore magnam pariatur rem, porro excepturi. Neque totam at laudantium autem aperiam corrupti aliquam repellendus accusantium repellat id culpa omnis eaque magni, dolorum rerum?</p>
+    </div>
 </body>
 </html>
