@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formos</title>
+    <style>
+        /* Žvaigždutė nurodo visus elementus dokumente */
+        /* Standartinio naršyklės css stiliaus nuėmimas visiems elementams globaliai yra vadinamas "reset" */
+        * {
+            box-sizing: border-box;
+        }
+        form {
+            width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+        }
+        .divider {
+            margin-bottom: 0.5rem;
+        }
+        /* type atributo selektorius pagal reikšmę "text" */
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="email"],
+        input[type="datetime-local"], 
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            background-color: rgb(244, 244, 244);
+            border: 1px solid rgb(219, 219, 219);
+            padding: .3rem .5rem;
+        }
+
+        .aligned-items label {
+            display: inline;
+        }
+
+        input[type="range"] {
+            width: 100%;
+        }
+
+        /* resize savybė pašalina galimybę vartotojui keisti textarea elemento proporcijas */
+        textarea {
+            resize: none;
+            height: 300px;
+        }
+
+        textarea:focus {
+            border: 10px solid red;
+            outline: none;
+        }
+
+        a:visited {
+            color: red;
+        }
+
+        a:hover {
+            color: purple;
+            text-decoration: none;
+        }
+
+        a:active {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div class="divider">
+            <label>Įveskite savo vardą:</label>
+            <!-- required atributas nurodo, jog laukelyje turi būti kažkas įvesta -->
+            <input type="text" value="Vilius" required>
+        </div>
+        <div class="divider">
+            <label>Įveskite savo amžių:</label>
+            <input type="number" min="10" max="50" required>
+        </div>
+        <div class="divider">
+            <label>Pasirinkite gimimo datą:</label>
+            <input type="date" required>
+        </div>
+        <div class="divider">
+            <label>Įveskite el. pašto adresą:</label>
+            <input type="email" placeholder="vilius@bit.lt" required>
+        </div>
+        <div class="divider">
+            <label>Pasirinkite gimimo datą ir laiką</label>
+            <input type="datetime-local" required>
+        </div>
+        <div class="divider aligned-items">
+            <!-- Laukelio užpildymui paspaudus ant teksto: (Pirmas variantas) -->
+            <!-- <label>
+                Sutinku su vartojimo taisyklėmis
+                <input type="checkbox">            
+            </label> -->
+            <!-- Atributas checked atvaizduoja elementą jau užpildytą puslapiui užsikrovus -->
+            <!-- Antras variantas, laukelio užpildymui paspaudus ant teksto -->
+            <input id="sutinku" type="checkbox" checked="checked"> 
+            <label for="sutinku">Sutinku su vartojimo taisyklėmis</label>
+        </div>
+        <div class="divider aligned-items">
+            <input id="reklama" type="checkbox"> 
+            <label for="reklama">Sutinku gauti reklaminius pasiųlymus</label>
+        </div>
+        <!-- Radio tipo elementai yra naudojami pasirinkti viena reikšmę -->
+        <div class="divider">
+            <label>
+                <input type="radio" name="produktai">
+                Obuoliai
+            </label>
+        </div>
+        <div class="divider">
+            <label>
+                <input type="radio" name="produktai">
+                Bananai
+            </label>
+        </div>
+        <div class="divider">
+            <label>
+                <input type="radio" name="produktai">
+                Apelsinai
+            </label>
+        </div>
+        <div class="divider">
+            <label>
+                Įkelkite failą
+                <input type="file">
+            </label>
+        </div>
+        <div class="divider">
+            <label>Įveskite slaptažodį</label>
+            <input type="password">
+        </div>
+        <div class="divider">
+            <label>Pasirinkite spalvą</label>
+            <input type="color">
+        </div>
+        <div class="divider">
+            <input type="range" min="0" max="100" value="0">
+        </div>
+        <div class="divider">
+            <label>Pasirinkite šalį:</label>
+            <select>
+                <option>Jungtinė Karalystė</option>
+                <option>Airija</option>
+                <option selected="selected">Prancūzija</option>
+                <option>Ispanija</option>
+            </select>
+        </div>
+        <div class="divider">
+            <textarea placeholder="Kažkoks tekstas"></textarea>
+        </div>
+        <div class="divider">
+            <a href="https://google.com">Google</a>
+            <a href="https://yahoo.com">Yahoo</a>
+            <a href="https://delfi.lt">Delfi</a>
+            <a href="https://15min.lt">15min.lt</a>
+        </div>
+        <!-- <input type="submit" value="Siųsti"> -->
+        <button type="submit">Siųsti</button>
+        <!-- <input type="reset" value="Atstatyti"> -->
+        <button type="reset">Atstatyti</button>
+    </form>
+</body>
+</html>
