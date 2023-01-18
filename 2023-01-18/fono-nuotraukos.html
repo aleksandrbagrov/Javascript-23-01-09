@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fono Nuotraukos</title>
+    <style>
+        h1 {
+            color: white;
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            /* Norėdami priskirti fono nuotrauką prie elemento */
+            background-image: url('resursai/nuotraukos/2.jpg');
+            /* Jeigu nuotrauka yra mazesnė nei ekrano dydis */
+            /* repeat-x nurodo, jog nuotrauka būtų kartojama į dešinę pusę */
+            /* background-repeat: repeat-x; */
+            /* repeat-y nurodo, kad nuotrauka būtų kartojama vertikaliai žemyn */
+            /* background-repeat: repeat-y; */
+            /* no-repeat nurodo, kad nuotrauka neturi būti kartojama */
+            background-repeat: no-repeat;
+            /* Pirmoji reikšmė nurodo poziciją x ašyje, antroji y ašyje */
+            background-position: 0 0;
+            background-position: center center;
+            /* Background-size savybė nurodo nuotraukos dydį */
+            background-size: 50% 100%; 
+            /* galimos dvi perduodamos reikšmės, pirmoji vertikali, antroji horizontali */
+            background-size: 100%;
+            /* Automatiškai paskaičiuoja nuotraukos poziciją pagal proprocijas */
+            background-size: cover; 
+            /* Fono nuotraukos priskyrimas viena eilute */
+            background: url('resursai/nuotraukos/2.jpg') no-repeat center center / cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- <img src="resursai/nuotraukos/bg.webp" alt="Testine nuotrauka"> -->
+    <h1>Sveiki gyvi</h1>
+</body>
+</html>

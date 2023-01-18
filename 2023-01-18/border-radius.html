@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border radius</title>
+    <style>
+        .box {
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 30px;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .radius-1 {
+            /* Norint suformuoti apskritimą */
+            border-radius: 50%;
+        }
+
+        .radius-2 {
+            border-radius: 20px 50px 5px 100px;
+        }
+
+        .radius-3 {
+            border-end-end-radius: 30px;
+            border-end-start-radius: 50px;
+            border-start-start-radius: 10px;
+            border-start-end-radius: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box blue radius-1"></div>
+    <div class="box red radius-2"></div>
+    <div class="box yellow radius-3"></div>
+</body>
+</html>

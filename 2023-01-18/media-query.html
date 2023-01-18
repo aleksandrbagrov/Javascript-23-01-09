@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzklausos forma</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color: rgb(216, 216, 216);
+            
+        }
+        .bendras {
+            display: flex;
+            justify-content: center;
+        }
+        .kaire {
+            display: block;
+            height: 530px;
+            width: 350px;
+            background-color: rgb(92,206,147);
+            color:white;
+            font-family: sans-serif;
+            justify-content: center;
+            padding: 3rem;
+            box-sizing: border-box;
+        }
+        h1, h3 {
+            font-weight:lighter;
+        }
+        h1 {
+            font-size: 27.7px;
+        }
+        h3 {
+            font-size: 15.4px;
+            line-height: 30px;
+            margin-bottom: 20px;
+        }
+        .icon {
+            border: 1px solid rgba(255, 255, 255, 0.855);
+            border-radius:100%;
+            padding: 10px;
+            font-size:x-large;
+            width:20%;
+            
+        }
+        .info {
+            height: 50px;
+            width: 200px;
+            text-align: left;
+            padding-left: 10px;
+            box-sizing: border-box;
+            font-weight: lighter;
+            line-height: 25px;
+            font-size: .4cm;
+        }
+        table {
+            margin-bottom: 20px; 
+        }
+        .desine {
+            display: block;
+            height: 530px;
+            width: 640px;
+            background-color: white;
+            color:black;
+            font-family: sans-serif;
+            justify-content: center;
+            padding: 3rem;
+            box-sizing: border-box;
+            font-size: 11px;
+            
+        }
+        label {
+            display: block;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .nameEmail {
+            display: flex;
+            margin-bottom: 20px;
+            width: 100%;
+                                    
+        }
+        .langelis {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-color: rgb(183, 183, 183);
+            height: 40px;
+        }
+        .vardas {
+            width: 274px;
+        }
+        .pastas {
+            width: 274px;
+        }
+        .ilgas {
+            width: 100%;
+        }
+        
+        button {
+            background-color: rgb(92,206,147);
+            color: white;
+            border-radius: 6.5px;
+            height: 40px;
+            width: 110px;
+            border: none;
+            margin-top: 10px;
+            font-size: 11.5px;
+        }
+        ::placeholder {
+            font-size: 14px;
+            font-family: sans-serif;
+        }
+        .divider {
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .bendras {
+                display: block;
+            }
+            .kaire {
+                width: 100%;
+                height: auto;
+            }
+            .desine {
+                width: 100%;
+                height: auto;
+            }
+
+            .nameEmail {
+                display: block;
+            }
+
+            .pastas,
+            .vardas {
+                width: 100%;
+            }
+
+            .nameEmail div:nth-child(2) {
+                margin-left: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bendras">
+        <div class="kaire">
+            <h1>Let's get in touch</h1>
+            <h3>We're open for any suggestions or just to have a chat</h3>
+            <div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th class="icon"><i class="fa fa-map-marker"></i></th>
+                            <th class="info">Address: 198 West 21st Street, Suite 721 New York</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th class="info" style="margin:0; height:20px;">NY 10016</th>
+                        </tr>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th class="icon"><i class="fa fa-phone"></th>
+                            <th class="info">Phone: + 1235 2355 98</th>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th class="icon"><i class="fa fa-paper-plane"></th>
+                            <th class="info">Email: info@yoursite.com</th>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th class="icon"><i class="fa fa-globe"></th>
+                            <th class="info">Website: yoursite.com</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="desine">
+            <h1>Get in touch</h1>
+            <div class="divider">
+                <div class="nameEmail">
+                    <div>
+                        <label>FULL NAME</label>
+                        <input class="langelis vardas" type="text" placeholder="Name">
+                    </div>
+                    <div style="margin-left:20px">
+                        <label>EMAIL ADDRESS</label>
+                        <input class="langelis pastas" type="email" placeholder="Email">
+                    </div>
+                </div>
+                <div style="margin-bottom:20px">
+                    <label>SUBJECT</label>
+                    <input class="langelis ilgas" type="text" placeholder="Subject">
+                </div>
+                <div>
+                    <label>MESSAGE</label>
+                    <textarea class="langelis ilgas" placeholder="Message"></textarea>
+                </div>
+                <button>Send Message</button>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box shadow</title>
+    <style>
+        .box {
+            width: 250px;
+            height: 250px;
+            margin: 50px auto 50px;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .shadow-1 {
+            box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.337);
+        }
+
+        .shadow-2 {
+            box-shadow: -20px -20px 0 0 rgba(107, 0, 0, 0.574);
+        }
+
+        .shadow-3 {
+            box-shadow: 0 10px 10px 3px rgba(79, 83, 0, 0.27);
+        }
+
+        .parent-box {
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 30px;
+            /* overflow: hidden reikšmė paslepia viską kas išlenda už elemento aukščio ir pločio */
+            overflow: hidden;
+            padding: 0 30px;
+        }
+
+        .parent-box div {
+            width: 250px;
+            height: 250px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="box blue shadow-1"></div>
+    <div class="box red shadow-2"></div>
+    <div class="parent-box">
+        <div class="yellow shadow-3"></div>
+    </div>
+</body>
+</html>
