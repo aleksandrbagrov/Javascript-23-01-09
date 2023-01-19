@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pozicijos</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .box {
+            width: 250px;
+            height: 250px;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .blue {
+            background: blue;
+        }
+
+        .green {
+            background: green;
+        }
+
+        .purple {
+            background: purple;
+        }
+
+        .orange {
+            background: orange;
+        }
+
+        .free {
+            position: absolute;
+            /* top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0; */
+            /* top ir left reikšmės hierarchijoje ima viršų prieš priskirtas bottom ir right reikšmes */
+            top: 50px;
+            left: 150px;
+        }
+
+        .bottom-right {
+            /* norint perrašyti aukščiau aprašytas savybes */
+            bottom: 20px;
+            right: 50px;
+            top: unset;
+            left: unset;
+        }
+
+        .overlap {
+            top: 150px;
+            left: 250px;
+            z-index: 1;
+        }
+
+        .second-overlap {
+            top: 200px;
+            left: 300px;
+            z-index: 1;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .middle-aligned-boxes {
+            top: 160px;
+            left: 620px;
+        }
+
+        .relative {
+            /* position: static priskiriamas standartiskai visiems elementams */
+            position: relative;
+            height: 100vh;
+            /* top: 90px; */
+        }
+        
+        .headlines div {
+            width: 33.3333333%;
+            position: relative;
+        }
+
+        .headlines div img {
+            width: 100%;
+        }
+        
+        .comments-count {
+            width: 40px;
+            height: 40px;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            background: rgba(255, 0, 0, 0.61);
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: none;
+        }
+
+        .headlines div:hover .comments-count {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="box red free bottom-right"></div>
+    <div class="box purple free second-overlap"></div>
+    <div class="box green free overlap"></div>
+    <div class="box blue free"></div>
+    <div class="flex free middle-aligned-boxes">
+        <div class="box red"></div>
+        <div class="box blue"></div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere optio sint assumenda illum, sit deleniti quasi repellendus dolore? Dignissimos dolore, voluptatum similique libero fugit explicabo non. Optio ipsa beatae id veniam possimus voluptatem explicabo labore enim hic porro saepe vero, iste, adipisci ducimus? Blanditiis, aperiam reprehenderit perferendis dolorem autem, corporis iste ea, recusandae cupiditate sunt molestias! Odit pariatur sapiente, blanditiis non doloribus sit aperiam, asperiores ut facilis accusantium enim consequatur, eos provident optio rerum. Quis consequatur quaerat unde, autem vero, qui possimus, optio nesciunt odio veritatis distinctio corrupti? Atque porro rerum nobis deleniti laboriosam illum nisi est ut eaque quae aspernatur sit veniam explicabo, incidunt ex voluptates voluptatem consequatur molestias nulla accusantium vel sapiente sint. Illo sapiente quod dolorum neque officia voluptate modi dolor aspernatur at dignissimos nesciunt nisi similique possimus eligendi minima quibusdam quas exercitationem, culpa itaque eius. Sint ex excepturi consectetur unde, necessitatibus hic, voluptates illum iure corporis, maxime iste? Cumque maxime dolor necessitatibus nostrum aliquid fugiat architecto eligendi consequuntur a totam consectetur ipsa doloribus, laboriosam iusto veniam, nisi maiores, rem consequatur esse dicta unde delectus adipisci! Rem error sunt tempora, laboriosam, eveniet, deserunt dicta maxime voluptatum cumque est accusantium iure aspernatur maiores ipsum officia dolor nesciunt in dolorem quibusdam. Perspiciatis possimus qui deleniti saepe consectetur nulla ipsa, reiciendis, rem itaque ex nemo et voluptatem sunt animi sed, similique quos iste? Repudiandae illo nihil recusandae laudantium inventore deleniti assumenda quaerat dolorem est. Reiciendis aspernatur beatae quas officia porro quo non et vitae quidem nisi enim quibusdam optio mollitia placeat, aliquid corrupti doloribus at soluta, distinctio itaque eaque? Voluptates dolorum illo temporibus rerum nemo facere voluptate optio! Praesentium provident minus, nulla impedit magni quisquam voluptates illo mollitia accusamus reiciendis odio amet officia distinctio id temporibus iusto eveniet incidunt in tempore voluptatum sint cumque dicta alias! Accusantium necessitatibus dolorum error quas eligendi sequi earum in cupiditate sit. Mollitia, quas illum rerum iusto doloremque alias magni aspernatur assumenda? Atque quasi dignissimos voluptate explicabo, repellat ab officiis, vero magnam, iure adipisci provident tempora ea accusamus quia maxime quidem molestiae? Nihil sequi officia repudiandae accusamus dolor alias impedit dolorem aperiam magnam voluptatum asperiores, totam nam autem recusandae adipisci. Totam delectus modi obcaecati nemo voluptatum odit? Voluptates ratione minima soluta neque fugit. Placeat, voluptates autem recusandae a perferendis obcaecati adipisci quas perspiciatis, culpa nam cum non ipsam quaerat velit quis mollitia nihil facilis assumenda dolore, magnam exercitationem incidunt tenetur doloremque. Vel ex commodi minima sit eligendi laudantium dolorem iure? Voluptate quae consequuntur voluptatum id repudiandae officia doloremque nemo ipsa. Dignissimos, consectetur architecto labore error quibusdam molestiae vero reprehenderit minus dicta officiis consequuntur quidem exercitationem magnam nemo? Non aperiam quia rem. Beatae qui nostrum corrupti ea odio voluptatibus officiis quibusdam, doloribus eius nemo neque vel doloremque dolorum, magnam quisquam necessitatibus pariatur, dolor atque quod quam quia iste aperiam. Voluptas, voluptate quam sequi a iure facilis hic cupiditate dolorum laboriosam perspiciatis, rerum earum tenetur porro aperiam officia expedita doloremque et dignissimos amet! Similique sapiente corporis quos error itaque soluta maxime, quo perferendis vel ea dignissimos! Quae laboriosam quaerat quasi. Voluptates fugit doloribus reprehenderit iure dolore pariatur? Odio rerum vero provident fugiat laudantium reiciendis, exercitationem asperiores excepturi praesentium aperiam quidem nostrum molestias dolores est, ratione aspernatur, consequatur ut. Repudiandae voluptatibus praesentium animi architecto temporibus non perferendis odit esse sunt ut! Dolorem minima sint at nisi consequatur, inventore nam dolores in natus saepe eius deleniti magni blanditiis illo fuga vero dolorum autem placeat, aliquam nesciunt nobis voluptatum quia? Iusto corrupti sed illum, commodi excepturi, unde ut, optio fugit earum sit dolor obcaecati. Impedit repellat perspiciatis beatae voluptate voluptas, at, magnam adipisci error amet temporibus maiores delectus unde tenetur voluptates voluptatem doloremque quis ab dolorem tempore! Tenetur sed fugiat adipisci molestias natus quaerat voluptatibus eaque quibusdam aliquid. Excepturi, ex? Dolores quis soluta vel iste, ipsam, obcaecati illum consequuntur fugit expedita officiis qui ullam eos, modi debitis perferendis eligendi. Qui magni maxime ea non, veniam dolorem praesentium hic, temporibus illum aliquid accusantium. Iusto non exercitationem corporis! Numquam excepturi recusandae quasi! Sint exercitationem excepturi asperiores ex facere enim provident veniam beatae aspernatur odit expedita suscipit, rem iste aliquam nobis aperiam. Non accusantium nostrum odit hic amet eius dignissimos unde, recusandae aliquam facere corrupti eos et magni animi asperiores voluptates quisquam culpa nam. Sapiente, omnis cupiditate? Numquam magnam vero, eveniet enim odio facilis deleniti sapiente hic porro distinctio totam unde adipisci culpa quasi suscipit? Nostrum voluptatum asperiores veniam, quidem repellat inventore deserunt quo velit laborum quod nam magni maxime officia nulla quibusdam. Debitis, recusandae fugit, alias asperiores nesciunt quasi officia vero laboriosam sit odio, fuga repellat ullam architecto quo! Cum fuga eligendi non. Dolorem, officiis voluptate tempore reprehenderit aspernatur explicabo eligendi nisi exercitationem dicta enim debitis, error sequi molestias amet temporibus et quo nesciunt deleniti similique fugit, maxime tenetur quibusdam. At aut unde eaque dignissimos nihil quia iusto, recusandae rem, nisi, inventore nulla velit. Suscipit error cumque debitis eligendi neque iusto in explicabo cupiditate quos, hic rem ut voluptas saepe. Magnam eligendi accusantium laborum labore repudiandae vitae facere commodi id quibusdam obcaecati harum earum reiciendis rerum, voluptatum, tenetur corporis quam itaque? Ratione perferendis optio eaque veniam earum atque pariatur at ipsam minima vel maxime, cupiditate quia repellat eligendi amet? Ab, exercitationem, quibusdam nisi, blanditiis facilis voluptate aliquam modi tenetur omnis nulla ipsam ad voluptatibus illo culpa officiis repudiandae. Omnis commodi explicabo facere blanditiis. Voluptatum, numquam provident labore porro eius nisi. Rem nemo ullam aspernatur voluptates repellendus dolores atque, eveniet tempore! Ex numquam mollitia reiciendis repudiandae rem commodi autem quo ratione vitae, itaque dolorem fugit provident odio natus nisi cum aspernatur assumenda? Fuga mollitia quidem repudiandae quisquam necessitatibus officiis alias, architecto veniam sit quae modi ratione a, delectus ea odio tempore. Sunt quasi, tempore iste eaque odit nulla laborum, itaque dolorum non doloremque qui praesentium obcaecati, saepe fugiat ducimus vel numquam quas maiores rerum quo! Obcaecati odit, fuga vero tempora eius veniam quaerat doloribus similique sequi soluta placeat, tenetur atque corporis eos inventore quam sunt adipisci! Non aliquid molestias blanditiis placeat quisquam magni animi voluptates, vitae iure accusantium, modi ut soluta quaerat numquam.</p>
+    <div class="relative orange">
+        <div class="box red free bottom-right"></div>
+        <div class="box purple free second-overlap"></div>
+        <div class="box green free overlap"></div>
+        <div class="box blue free"></div>
+    </div>
+    <div class="flex headlines">
+        <div>
+            <img src="https://g4.dcdn.lt/images/pix/430x260/YJP6b3V2I90/kazys-maksvytis-92312213.jpg" alt="" />
+            <span class="comments-count">5</span>
+        </div>
+        <div>
+            <img src="https://g3.dcdn.lt/images/pix/430x260/pGHFK4WGKnw/londonas-92145409.jpg" alt="" />
+            <span class="comments-count">25</span>
+        </div>
+        <div>
+            <img src="https://g2.dcdn.lt/images/pix/430x260/92-13XAZ38M/delfi-plius-16800-92246749.jpg" alt="" />
+            <span class="comments-count">15</span>
+        </div>
+    </div>
+</body>
+</html>

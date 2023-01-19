@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontaktai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafafa;
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .contact-form {
+            display: flex;
+            width: 1000px;
+            margin: 100px auto;
+            box-shadow: 13px 10px 27px 0 #00000012;
+        }
+
+        .contact-form h2 {
+            margin: 0 0 20px;
+            font-weight: 500;
+        }
+
+        .left-part {
+            width: 30%;
+            background: #01d28e;
+            padding: 30px;
+            color: white;
+        }
+
+        .left-part h2 {
+            color: white;
+        }
+
+        .left-part p {
+            color: rgb(221, 243, 255);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .left-part .option {
+            padding: 20px 0 20px 45px;
+            font-size: 14px;
+            position: relative;
+        }
+
+        .left-part .option span {
+            color: rgb(221, 243, 255);
+        }
+
+        .left-part .option i {
+            width: 35px;
+            height: 35px;
+            display: block;
+            border: 1px solid rgb(194 209 218);
+            text-align: center;
+            line-height: 35px;
+            border-radius: 50%;
+            position: absolute;
+            top: 13px;
+            left: 0;
+        }
+
+        .left-part .option:nth-child(1) i {
+            top: 18px;
+        }
+
+        .right-part {
+            width: 70%;
+            background: white;
+            padding: 30px;
+        }
+
+        .right-part .input-row {
+            margin-bottom: 15px;
+        }
+
+        .right-part .input-row label {
+            display: block;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .right-part .input-row input,
+        .right-part .input-row textarea {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #e7e7e7;
+            padding: 10px 0;
+        }
+
+        .right-part .input-row textarea {
+            height: 120px;
+        }
+
+        .right-part .inline-fields {
+            display: flex;
+            gap: 30px;
+        }
+
+        .right-part .inline-fields .input-row {
+            width: 50%;
+        }   
+
+        .button {
+            background: #01d28e;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-form">
+        <div class="left-part">
+            <h2>Let's get in touch</h2>
+            <p>We're open for any suggestion or just to have a chat</p>
+            <div class="contact-details">
+                <div class="option">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    Address:
+                    <span>198 West 21th Street, Suite 721 New York, NY 10061</span>
+                </div>
+                <div class="option">
+                    <i class="bi bi-telephone-fill"></i>
+                    Phone: +37065456165
+                </div>
+                <div class="option">
+                    <i class="bi bi-send-fill"></i>
+                    Email: test@gmail.com
+                </div>
+                <div class="option">
+                    <i class="bi bi-globe-europe-africa"></i>
+                    Website: yourdreams.com
+                </div>
+            </div>
+        </div>
+        <div class="right-part">
+            <h2>Get in touch</h2>
+            <form>
+                <div class="inline-fields">
+                    <div class="input-row">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Name" required>
+                    </div>
+                    <div class="input-row">
+                        <label>Email address</label>
+                        <input type="email" placeholder="Email">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <label>Subject</label>
+                    <input type="text" placeholder="Subject">
+                </div>
+                <div class="input-row">
+                    <label>Message</label>
+                    <textarea placeholder="Message"></textarea>
+                </div>
+                <div class="button-holder">
+                    <button class="button">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
