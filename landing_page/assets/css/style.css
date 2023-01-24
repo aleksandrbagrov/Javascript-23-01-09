@@ -1,10 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Mandali&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+@font-face {
+    font-family: 'Cerebri Sans';
+    src: url('../fonts/cerebri-sans-bold.ttf');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cerebri Sans';
+    color: #343a40;
+}
+
+img {
+    max-width: 100%;
+}
 
 body {
     margin: 0;
     font-family: 'Mandali', sans-serif;
     color: #6c757d;
+    /* background: url('../images/test.png') no-repeat top center;
+    background-size: 1519.2px; */
 }
 
 a {
@@ -21,6 +42,12 @@ ul {
     width: 100%;
     max-width: 1140px;
     margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.d-flex {
+    display: flex;
 }
 
 header {
@@ -28,11 +55,20 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    padding: 20px 0;
 }
 
 header .container {
-    display: flex;
     justify-content: space-between;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    display: block;
 }
 
 header nav ul {
@@ -50,6 +86,7 @@ header nav a:hover {
 
 header .account ul {
     display: flex;
+    gap: 20px;
 }
 
 header .account a {
@@ -65,15 +102,102 @@ header .account a.sign-up-link {
     color: #1f61eb;
     border: 1px solid #a6c1f8;
     border-radius: 3px;
-    padding: 0 15px 3px;
+    padding: 2px 15px;
     display: block;
+}
+
+header .account a.sign-up-link:hover {
+    background: #1f61eb;
+    color: white;
+    border-color: #1f61eb;
 }
 
 header .account a:hover {
     color: #1f61eb;
 }
 
+header a {
+    transition: all .3s ease-in-out;
+}
+
 #home {
     background: url('../images/hero-3-bg.png') no-repeat top center / cover;
-    padding-top: 100px;
+    padding-top: 170px;
 }
+
+#home .left,
+#home .right {
+    width: 50%;
+}
+
+#home .container {
+    gap: 30px;
+}
+
+#home .left {
+    padding-top: 60px;
+}
+
+#home .left h1 {
+    font-size: 56px;
+    margin: 0 0 20px;
+}
+
+#home .left p {
+    font-size: 17px;
+    line-height: 28px;
+}
+
+#home .left ul {
+    margin-bottom: 30px;
+}
+
+#home .left li {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+#home .left li::before {
+    content: "\F270";
+    font-family: bootstrap-icons;
+    color: #39e5b7;
+    font-weight: bold;
+}
+
+#home .left .featured-button {
+    background: #1f61eb;
+    border-radius: 4px;
+    font-size: 17px;
+    color: white;
+    padding: 9px 29px;
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+}
+
+#home .left .featured-button:hover {
+    background: #1457e1;
+    box-shadow: 0 9px 10px 0 rgb(197 218 255);
+}
+
+
+
+
+
+
+
+/* @media(max-width: 768px) {
+    #home .left p::before {
+        content: "";
+        background: yellow;
+        width: 30px;
+        height: 30px;
+        display: block;
+        float: left;
+    }
+}
+
+#home .left p::after {
+    content: "";
+    background-color: aqua;
+} */
