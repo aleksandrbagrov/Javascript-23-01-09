@@ -5,6 +5,13 @@
 @font-face {
     font-family: 'Cerebri Sans';
     src: url('../fonts/cerebri-sans-bold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Cerebri Sans';
+    src: url('../fonts/cerebri-sans-book.ttf');
+    font-weight: 300;
 }
 
 * {
@@ -14,6 +21,7 @@
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Cerebri Sans';
     color: #343a40;
+    margin: 0 0 20px;
 }
 
 img {
@@ -48,6 +56,79 @@ ul {
 
 .d-flex {
     display: flex;
+}
+
+.section-intro {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.section-intro h4 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.section-intro h2 {
+    font-size: 30px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.section-intro p {
+    max-width: 560px;
+    margin: 10px auto;
+    line-height: 28px;
+}
+
+.row {
+    display: flex;
+    gap: 30px;
+}
+
+.half-column {
+    width: 50%; 
+}
+
+.features-column {
+    padding-left: 80px;
+    padding-top: 100px;
+}
+
+.features-column-reversed {
+    padding-left: 0;
+    padding-right: 80px;
+}
+
+.features-column h2 {
+    font-size: 37px;    
+}
+
+.features-column p {
+    margin-bottom: 10px;
+}
+
+.features-list li {
+    position: relative;
+    line-height: 28px;
+    padding: 12px 0 12px 60px;
+}
+
+.features-list li i {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 2px rgba(21, 16, 91, 0.123);
+    color: #1f61eb;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.features-list li strong {
+    color: black;
 }
 
 header {
@@ -120,18 +201,14 @@ header a {
     transition: all .3s ease-in-out;
 }
 
+section {
+    padding: 100px 0;
+}
+
 #home {
     background: url('../images/hero-3-bg.png') no-repeat top center / cover;
     padding-top: 170px;
-}
-
-#home .left,
-#home .right {
-    width: 50%;
-}
-
-#home .container {
-    gap: 30px;
+    padding-bottom: 150px;
 }
 
 #home .left {
@@ -140,7 +217,6 @@ header a {
 
 #home .left h1 {
     font-size: 56px;
-    margin: 0 0 20px;
 }
 
 #home .left p {
@@ -180,11 +256,83 @@ header a {
     box-shadow: 0 9px 10px 0 rgb(197 218 255);
 }
 
+#howitwork {
+    text-align: center;
+}
 
+/* #howitwork .container > p {
+    max-width: 560px;
+    margin: 10px auto;
+    line-height: 28px;
+} */
 
+#howitwork .step {
+    padding: 0 40px;
+    position: relative;
+}
 
+#howitwork .step .icon {
+    border-radius: 28% 72% 50% 50%/26% 20% 80% 74%;
+    background: #dee7fc;
+    width: 96px;
+    font-size: 45px;
+    color: black;
+    height: 96px;
+    margin: 0 auto;
+}
 
+#howitwork .step:nth-child(2) .icon {
+    background: #ddfbf3;
+}
 
+#howitwork .step:nth-child(3) .icon {
+    background: #fff6dc;
+}
+
+#howitwork .step:nth-child(1)::after {
+    content: "";
+    position: absolute;
+    right: -53px;
+    top: 100px;
+    background: url('../images/arrow-top.png') no-repeat top left;
+    width: 118px;
+    height: 19px;
+}
+
+#howitwork .step:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    right: -53px;
+    top: 100px;
+    background: url('../images/arrow-bottom.png') no-repeat top left;
+    width: 118px;
+    height: 19px;
+}
+
+#howitwork .step h3 {
+    font-size: 19px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+#howitwork .step p {
+    margin: 0;
+    line-height: 26px;
+}
+
+#features {
+    background: #f8f9fa;
+}
+
+#features-2 {
+    background: #f8f9fa url('../images/features-bg.png') no-repeat center center / cover;
+    /* background-color: #f8f9fa; */
+}
+
+/* Kuomet norime kreiptis į elementą p kuris eina sekantis po h2 elemento */
+/* #howitwork h2 + p {
+    background: aqua;
+} */
 
 /* @media(max-width: 768px) {
     #home .left p::before {
