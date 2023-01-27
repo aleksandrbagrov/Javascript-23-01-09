@@ -89,6 +89,14 @@ ul {
     width: 50%; 
 }
 
+.smaller-column {
+    width: 40%;
+}
+
+.larger-column {
+    width: 60%;
+}
+
 .features-column {
     padding-left: 80px;
     padding-top: 100px;
@@ -137,6 +145,24 @@ ul {
 
 .opacity-6 {
     opacity: 0.6;
+}
+
+.button {
+    display: block;
+    border-radius: 3px;
+    background: rgb(31,97,235);
+    background: linear-gradient(90deg, rgba(31,97,235,1) 0%, rgba(148,180,245,1) 100%);
+    text-align: center;
+    color: white;
+    padding: 4px 0;
+}
+
+.button-red {
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    background: rgb(235,32,83);
+    background: linear-gradient(90deg, rgba(235,32,83,1) 0%, rgba(245,148,172,1) 100%);
 }
 
 header {
@@ -517,6 +543,198 @@ section {
     border-radius: 30px;
 }
 
+#pricing .plans {
+    padding-top: 25px;
+    display: flex;
+    gap: 25px;
+}
+
+#pricing .plan {
+    width: 33.3333333%;
+    padding: 50px;
+    box-shadow: 0 0 10px 0 #0000001c;
+    border-radius: 4px;
+}
+
+#pricing .plan-pricing {
+    background: #f8f9fa;
+    text-align: center;
+    padding: 15px 0 10px;
+}
+
+#pricing .plan-pricing .title {
+    font-weight: 600;
+    color: #343a40;
+    font-size: 19px;
+}
+
+#pricing .plan-pricing .ammount {
+    font-weight: 600;
+    color: #1f61eb;
+    font-size: 36px;
+}
+
+#pricing .plan-features {
+    color: #343a40;
+    padding: 40px 0;
+}
+
+#pricing .plan-features li {
+    padding: 4px 0;
+}
+
+#pricing .plan.active {
+    background: #f8f9fa;
+    position: relative;
+    overflow: hidden;
+}
+
+#pricing .plan.active::before {
+    content: "Most Popular";
+    background: #eb1f52;
+    position: absolute;
+    top: 34px;
+    right: -35px;
+    width: 170px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    box-shadow: 0 3px 3px 0 #0000002e;
+    font-size: 13px;
+    transform: rotate(45deg);
+}
+
+#faq {
+    background: #f8f9fa;
+}
+
+#faq .question {
+    background: white;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.083);
+    border-radius: 7px;
+    margin-bottom: 12px;
+}
+
+#faq .question .answer {
+    display: none;
+}
+
+#faq .question.active .answer {
+    display: block;
+    padding: 20px;
+    line-height: 26px;
+}
+
+#faq .question h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #536976;
+    font-family: 'Mandali', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+#faq .question.active h2 {
+    background-color: #e6e9ef;
+    color: #343a40;
+}
+
+#phones {
+    text-align: center;
+    padding: 82px 0;
+}
+
+#phones h2 {
+    font-size: 48px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#phones p {
+    max-width: 690px;
+    margin: 20px auto 40px;
+}
+
+#phones .app-links img {
+    max-height: 52px;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 28%);
+    margin: 0 2px;
+}
+
+#contacts {
+    background: #f8f9fa;
+}
+
+#contacts .smaller-column h2 {
+    font-size: 30px;
+    display: flex;
+    align-items:center;
+    margin-bottom: 40px;
+}
+
+#contacts .smaller-column  img {
+    height: 80px;
+    margin-right: 20px;
+}
+
+#contacts .smaller-column  h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+    color: #343a40;
+}
+
+#contacts .smaller-column  h3 i {
+    color: #1f61eb;
+    font-size: 18px;
+    background: rgba(31, 97, 235, 0.15);
+    width: 36px;
+    height: 36px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 36px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#contacts .smaller-column  ul {
+    margin-bottom: 20px;
+}
+
+#contacts .smaller-column  ul a {
+    color: #536976;
+}
+
+#contacts .contact-form {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+    padding: 50px;
+}
+
+#contacts .contact-form label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+#contacts .contact-form input,
+#contacts .contact-form textarea {
+    width: 100%;
+    border: 1px solid #e9ecf1;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 15px;
+}
+
+#contacts .contact-form textarea {
+    height: 100px;
+}
+#contacts .contact-form .form-line {
+    margin-bottom: 10px;
+}
 /* Kuomet norime kreiptis į elementą p kuris eina sekantis po h2 elemento */
 /* #howitwork h2 + p {
     background: aqua;
