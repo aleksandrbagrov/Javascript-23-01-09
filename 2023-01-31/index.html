@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript intro</title>
+</head>
+<body>
+    <!-- Išorinio (external) JS failo integravimas -->
+    <script src="skriptas.js"></script>
+
+    <!-- Vidinis (Internal) JS kodas -->
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min); 
+        }
+
+        console.log('Sveiki visi');
+
+        //Kintamųjų deklaravimas
+
+        let skaicius = 10;
+
+        // Stringus galime sujunginėti panaudojant + operatorių 
+        // console.log('Kintamojo tipas:' + typeof skaicius);
+        console.log('Kintamojo tipas:', typeof skaicius);
+
+        skaicius += 22;
+
+        console.log('Nauja skaičiaus reikšmė', skaicius);
+
+        //Kondicinė logika
+        //Du lygybės ženklai nurodo tik reikšmių lyginimą
+        //Trys lygybės ženklai nurodo reikšmių ir duomens tipų lyginimą 
+        
+        if(skaicius === 32) {
+            console.log('Kintamojo reikšmė yra lygi 32');
+        } else if(skaicius == '34') {
+            console.log('Kintamojo reikšmė yra lygi 34');
+        } 
+        //Else if kondicijų kiekis nėra ribojamas
+        else {
+            console.log('Skaičius nėra lygus 32');
+        }
+
+        //Tikriname kuris kintamasis yra didesnis
+
+        let pirmas = 12;
+        let antras = 11;
+
+        if(pirmas > antras) {
+            console.log('Pirmasis kintamasis yra didesnis už antrą');
+        } 
+        else if(pirmas === antras) {
+            console.log('Kintamieji yra lygūs');
+        }
+        else {
+            console.log('Pirmasis kintamasis yra mažesnis už antrąjį.')
+        }
+
+        //Tikrinimas ar kintamasis nelygus
+
+        let reiksme = 'Labas';
+
+        //Vienas lygybes zenklas nurodo tik reikšmės tikrinimą
+        //Du lygybės ženklai nurodo reiškmės ir duomens tikrinimą
+
+        if(reiksme !== 'Sveiki') {
+            console.log('Kintamojo reikmšė nėra stringas "Sveiki".');
+        }
+
+        //Atsitiktinio skaičiau generavimui nuo 10 iki 50
+        let atsitiktinisSkaicius = rand(10, 50);
+
+        console.log(atsitiktinisSkaicius);
+
+        //Replace metodas
+        //Skirtas pakeisti norimą žodį ar simbolį stringe
+        stringas = 'Labas Vakaras';
+
+        console.log(stringas);
+
+        stringas = stringas.replace('Vakaras', 'Rytas');
+
+        console.log(stringas);
+
+        stringas = 'Labas vakaras Lietuva, tikiuosi širdyse dar ne vakaras';
+
+        //replaceAll metodas pakeičia visas stringe esančias raides arba simbolius norimais
+        stringas = stringas.replaceAll('vakaras', 'rytas');
+
+        console.log(stringas);
+    </script>
+</body>
+</html>
