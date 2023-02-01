@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kondicinė logika</title>
+</head>
+<body>
+    <script>
+        let x = 8;
+
+        //Riestinių skliaustų dėti nėra būtina, jei pagal sąlyga atliekamas tik vienos eilutės veiksmas
+        if(x === 10) 
+            console.log('X yra lygu dešimt'); 
+        else 
+            console.log('X yra nėra lygu dešimt');
+
+        if(x >= 10) {
+            console.log('X yra daugiau arba lygu dešimt');
+
+            if(x === 11) 
+                console.log('X yra lygu vienuolikai');
+        } else {
+            if(x > 5) 
+                console.log('X yra mažiau nei dešimt, tačiau dagiau nei 5');
+        }
+
+        //Šauktukas tikrina ar turime neigiamą reikšmę ir jeigu taip grąžiną true atsakymą
+    
+        let blogai = false;
+
+        if(!blogai) {
+            console.log('Kintamasis yra neigiamas');
+        }
+
+        // if(blogai === false) {
+        //     console.log('Kintamasis yra neigiamas');
+        // }
+
+        let nera = null;
+
+        if(!nera) {
+            console.log('Reikšmės nėra');
+        }
+
+        let nepriskirta = undefined;
+
+        if(!nepriskirta) {
+            console.log('Reikšmė nepriskirta');
+        }
+
+        let neigiama = 0;
+
+        if(!neigiama) {
+            console.log('Reikšmė yra neigiama');
+        }
+        
+        
+        //Kondicinių sąlygų sujungimai, loginiai operatoriai
+
+        let pirmasSkaicius = 19;
+        let antrasSkaicius = 16;
+
+        //OR operatorius žymimas || ir nusako, kad viena arba kita sąlyga turi turėti teigiamą reikšmę
+        if(pirmasSkaicius >= 20 || antrasSkaicius < 12) {
+            console.log('Išsipildė pirma arba antra sąlyga');
+        }
+
+        //AND operatorius žymimas && simboliais
+
+        if(pirmasSkaicius > 18 && antrasSkaicius > 15) {
+            console.log('Iššsipildi abi sąlygos');
+        }
+    </script>
+</body>
+</html>

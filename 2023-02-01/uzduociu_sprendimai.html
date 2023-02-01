@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        console.log('Pirma užduotis');
+
+        let vardas = 'Leonardo';
+        let pavarde = 'DiCaprio';
+
+        if(vardas.length > pavarde.length) {
+            console.log('Trumpesnis kintamasis yra pavarde:', pavarde);
+        } else if(vardas.length === pavarde.length) {
+            console.log('Vardas ir Pavarde yra vienodo ilgio');
+        } else {
+            console.log('Trumpesnis kintamasis yra vardas:', vardas);
+        }
+
+        console.log('Antra užduotis');
+
+        let name = 'Aleksandras';
+        let last_name = 'Diuma';
+        let byear = 1802;
+        let cyear = 2023;
+        let age = 2023 - 1802;
+
+        // console.log('Aš esu', name, last_name, '. Man yra', age , 'metai(ų)');
+
+        // console.log('Aš esu', name, last_name, '. Man yra', cyear - byear , 'metai(ų)');
+
+        let result = 'Aš esu ' + name + ' ' + last_name + '. Man yra ' + (cyear - byear) + ' metai(ų)';
+
+        console.log(result);
+
+        console.log('Trečia užduotis');
+
+        vardas =        'Leonardo';
+        //Pozicijos:     01234567
+        pavarde = 'DiCaprio';
+
+        result = vardas[vardas.length - 3] + 
+                 vardas[vardas.length - 2] + 
+                 vardas[vardas.length - 1] + 
+                 pavarde[pavarde.length - 3] + 
+                 pavarde[pavarde.length - 2] + 
+                 pavarde[pavarde.length - 1];
+
+        console.log(result);
+
+        console.log('Ketvirta užduotis');
+
+        let fraze = 'Once upon a time in hollywood';
+
+        //fraze = fraze.replaceAll('o', '*');
+        // fraze = fraze.replaceAll('O', '*');
+
+        //Vienoje eilutėje
+        //fraze = fraze.replaceAll('o', '*').replaceAll('O', '*');
+
+        //Pasinaudojant regex (regular expression)
+        fraze = fraze.replaceAll(/[oO]/g, '*');
+
+        console.log(fraze);
+
+        console.log('Penkta užduotis');
+
+        let pirmas = rand(0, 2);
+        let antras = rand(0, 2);
+        let trecias = rand(0, 2);
+        let ketvirtas = rand(0, 2);
+        
+        let nuliai = 0;
+        let vienetai = 0;
+        let dvejetai = 0;
+
+        console.log('Gautos reikšmės:', pirmas, antras, trecias, ketvirtas);
+
+        if(pirmas === 0) {
+            nuliai++;
+        }
+
+        if(antras === 0) {
+            nuliai++;
+        }
+
+        if(trecias === 0) {
+            nuliai++;
+        }
+
+        if(ketvirtas === 0) {
+            nuliai++;
+        }
+
+        if(pirmas === 1) {
+            vienetai++;
+        }
+
+        if(antras === 1) {
+            vienetai++;
+        }
+
+        if(trecias === 1) {
+            vienetai++;
+        }
+
+        if(ketvirtas === 1) {
+            vienetai++;
+        }
+
+        if(pirmas === 2) {
+            dvejetai++;
+        }
+
+        if(antras === 2) {
+            dvejetai++;
+        }
+
+        if(trecias === 2) {
+            dvejetai++;
+        }
+
+        if(ketvirtas === 2) {
+            dvejetai++;
+        }
+
+        console.log('Nulių yra:', nuliai, 'Vienetų yra:', vienetai, 'Dvejetų yra:', dvejetai);
+
+    </script>
+</body>
+</html>

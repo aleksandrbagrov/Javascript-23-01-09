@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcijos</title>
+</head>
+<body>
+    <script>
+        //Math kintamasis jau yra pateikiamas mums naršyklės
+        //Norint rasti didžiausią skaičių tarp išvardintų
+        let max = Math.max(15, 88, 11, 45, 22, 8, 2);
+
+        console.log(max);
+
+        //Norint susirasti mažiausią reikšmę
+        let min = Math.min(15, 88, 11, 45, 22, 8, 2);
+
+        console.log(min);
+
+        let skaicius = 3.14554161;
+
+        //Matematinis suapvalinimas iki sveiko skaičiaus
+        let round = Math.round(skaicius);
+
+        console.log('Suapvalinimas naudojant round() metoda: ', round);
+
+        //Apvalinimas iki mažesnio sveikojo skaičiaus
+        skaicius = 3.85156165165;
+
+        let floor = Math.floor(skaicius);
+
+        console.log('Suapvalinimas naudojant floor() metoda: ', floor);
+
+        //Apvalinimas iki didesnio sveikojo skaičiaus
+
+        skaicius = 3.14554161;
+
+        let ceil = Math.ceil(skaicius);
+
+        console.log('Suapvalinimas naudojant ceil() metoda: ', ceil);
+
+        //Norint pasirinkti skaičių kiekį po kablelio 
+        skaicius = 85.515615651566;
+
+        let fixed = skaicius.toFixed(4);
+
+        console.log('Keturi skaičiai po kablelio naudojant toFixed() metodą:', fixed);
+
+        //Template literals stringų reikšmės
+
+        let name = 'Aleksandras';
+        let last_name = 'Diuma';
+        let byear = 1802;
+        let cyear = 2023;
+        let age = 2023 - 1802;
+
+        let hello = `Aš esu ${name} ${last_name}. Man yra ${cyear - byear} metai(ų)`;
+
+        console.log(hello);
+
+
+    </script>
+</body>
+</html>
