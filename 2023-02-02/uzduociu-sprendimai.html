@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        //Pasinaudokite atsitiktinio skaičiaus generavimo funkcija. Sukurkite du kintamuosius ir 
+        //naudodamiesi funkcija jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. 
+        //Didesnę reikšmę padalinkite iš mažesnės. 
+        //Atspausdinkite rezultatą jį suapvalinę iki 2 skaičių po kablelio.
+
+        console.log('Pirmoji užduotis');
+
+        let pirmas = rand(0, 4);
+        let antras = rand(0, 4);
+
+        console.log('Gauti skaičiai:', pirmas, antras);
+        
+        if(pirmas > antras) {
+            if(antras === 0) {
+                console.log('Dalyba negalima');
+            } else {
+            console.log((pirmas / antras).toFixed(2));
+            }
+        } else if (pirmas === 0  && antras === 0) {
+            console.log('Dalyba negalima');
+        } 
+        else {
+            console.log((pirmas / antras).toFixed(2));
+        }
+
+        //Naudokite funkciją ir sukurkite tris kintamuosius kuriems priskirkite 
+        //atsitiktines reikšmes nuo 0 iki 25. Raskite ir atspausdinkite vidurinę reikšmę.
+
+        console.log('Antroji užduotis');
+
+        let pirmas_skaicius = rand(0, 25);
+        let antras_skaicius = rand(0, 25);
+        let trecias_skaicius = rand(0, 25);
+
+        console.log('Gauti skaičiai:', pirmas_skaicius, antras_skaicius, trecias_skaicius);
+
+        let maziausias = Math.min(pirmas_skaicius, antras_skaicius, trecias_skaicius);
+        let didziausias = Math.max(pirmas_skaicius, antras_skaicius, trecias_skaicius);
+
+        console.log('Mažiausias skaičius', maziausias);
+        console.log('Didžiausias skaičius', didziausias);
+
+        let suma = pirmas_skaicius + antras_skaicius + trecias_skaicius;
+
+        let vidurinis = suma - (maziausias + didziausias);
+
+        console.log('Vidurinis skaičius', vidurinis);
+
+        //Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę 
+        //kaip stringus. Sukurti trečią kintamąjį ir jam priskirti stringą, sudarytą iš 
+        //pirmų vardo ir pavardės kintamųjų raidžių. Jį atspausdinti.
+
+        console.log('Trečioji užduotis');
+        
+        let vardas = 'Bradas';
+        let pavarde = 'Pitas';
+
+        let inicialai = vardas[0] + pavarde[0];
+
+        console.log('Inicialai:', inicialai);
+
+        //Parašyti kodą, kuris generuotų atsitiktinį 
+        //stringą iš lotyniškų mažųjų raidžių. Stringo ilgis 3 simboliai.
+
+        console.log('Ketvirtoji užduotis');
+
+        let raides = 'abcdefghijklmnopqrstuvwxyz';
+
+        let kodas = raides[rand(0, raides.length - 1)] + raides[rand(0, raides.length - 1)] + raides[rand(0, raides.length - 1)];
+
+        console.log('Atsitiktinis stringas:', kodas);
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript funkcijos</title>
+</head>
+<body>
+    <script>
+        let stringas = 'Once upon a time in hollywood';
+
+        //startsWidth() grąžina teigiamą arba neigiamą atsakymą ar stringas prasideda įvardinta fraze
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
+
+        if(stringas.startsWith('Once')) {
+            console.log('Stringas prasideda žodžiu Once');
+        } else {
+            console.log('Stringas NEprasideda žodžiu Once');
+        }
+
+        //endsWith() grąžina teigiamą arba neigiamą atsakymą ar stringas baigiasi įvardinta fraze
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
+
+        if(stringas.endsWith('hollywood')) {
+            console.log('Stringas baigiasi žodžiu hollywood');
+        } else {
+            console.log('Stringas NEsibaigia žodžiu hollywood');
+        }
+
+        //includes() grąžina teigiamą arba neigiamą atsakymą ar stringe yra įvardintas žodis ar simbolis
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+        
+        if(stringas.includes('time')) {
+            console.log('Stringe yra žodis time');
+        } else {
+            console.log('Stringe Nėra žodis time');
+        }
+
+        //indexOf() grąžina pirmą pozicija ties kuria prasideda arba yra patalpintas ieškomas žodis arba simbolis
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
+
+        console.log('Pozicija ties kuria prasideda žodis "upon"', stringas.indexOf('upon'));
+
+        //lastIndexOf() grąžina paskutinę poziciją ties kuria prasideda arba yra patalpintas ieškomas žodis arba simbolis
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf
+
+        console.log('Pozicija ties kuria prasideda raidė "o"', stringas.lastIndexOf('o'));
+
+        //repeat() pakartoją stringą nurodytą kiekį kartų
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
+
+        stringas = 'Valio!';
+
+        console.log(stringas.repeat(10));
+
+        // let i = 0;
+        // let rezultatas = '';
+
+        // while(i < 10) {
+        //     rezultatas += stringas;
+        //     i++;
+        // }
+
+        // console.log(rezultatas);
+
+        //slice() metodas ištraukia dalį teksto iš norimo stringo pagal nurodytas pozicijas
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+        
+        stringas = 'Once upon a time in hollywood';
+        
+        console.log(stringas.slice(10));
+
+        console.log(stringas.slice(10, 16));
+
+        console.log(stringas.slice(-9));
+
+        //toUpperCase() konvertuoja visas raides į didžiąsias
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase
+
+        console.log(stringas.toUpperCase());
+
+        //toLowerCase() konvertuoja visas raides į mažąsias
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+        console.log(stringas.toLowerCase());
+
+        //trim() pašalina tarpus iš stringo priekio ir pabaigos
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+        stringas = '    Once upon a time in hollywood      ';
+        console.log(stringas);
+
+        console.log(stringas.trim());
+
+        //trimStart() pašalina tarpus tik iš stringo priekio
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart
+
+        console.log(stringas.trimStart());
+
+        //trimEnd() pašalina tarpus tik iš stringo pabaigos
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd
+
+        console.log(stringas.trimEnd());
+    </script>
+</body>
+</html>
