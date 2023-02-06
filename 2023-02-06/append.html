@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append</title>
+</head>
+<body>
+    <div id="wrapper" class="container"></div>
+    <script>
+        let x = 'Algirdas';
+        
+        document.write('<div>Sveiki</div>');
+
+        //getElementById() metodas suranda elementą pagal ID atributą
+        //Norint pridėti HTML kodą:
+        document.getElementById('wrapper').innerHTML = '<h1>Sveiki visi</h1>';
+        //Norint pridėti tekstą (pirmas variantas):
+        document.getElementById('wrapper').innerText = '<h1>Sveiki visi</h1>';
+        //Norint pridėti tekstą (antras variantas):
+        document.getElementById('wrapper').textContent = `<div>Sveiki ${x}</div>`;
+
+        //querySelector() metodas suranda elementą pagal CSS selektorius
+        document.querySelector('.container').innerHTML = `<span>Sveiki ${x}</span>`;
+        //querySelector metodas priima CSS kreipinius
+        document.querySelector('.container span').textContent = `Viso gero ${x}`;
+    </script>
+</body>
+</html>
