@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masyvai (Array)</title>
+</head>
+<body>
+    <script>
+        //Global scope (Globali apimtis)
+        let masyvas = ['Televizorius', 10, false, undefined, 50, 'Masyvo pabaiga'];
+        
+        console.log(masyvas);
+
+        //Masyvo ilgis grąžinamas:
+        console.log(masyvas.length);
+
+        //Reikšmių paėmimas iš masyvo su while ciklu
+        // let i = 0;
+
+        // while(i < masyvas.length) {
+        //     console.log(typeof masyvas[i]);
+            
+        //     i++;
+        // }
+
+        //Reikšmių paėmimas iš masyvo su for ciklu
+        // for(let i = 0; i < masyvas.length; i++) {
+        //     console.log(masyvas[i]);
+        // }
+
+        //Reikšmių pridėjimas į masyvą
+
+        // masyvas[6] = 99.99;
+        
+        //Pirmas būdas pridėti reikšmę į masyvo pabaigą
+        masyvas[masyvas.length] = 99.99;
+
+        //Antras būdas pridėti reikšmę į masyvo pabaigą
+        masyvas.push('Pridėtas elementas', 'ir', 'dar vienas', 'elementas');
+
+        console.log(masyvas);
+        
+        //Tučio masyvo priskyrimo būdai
+        //let tuscias_masyvas = new Array();
+        let tuscias_masyvas = [];
+
+        tuscias_masyvas.push(10, 20, 30);
+        
+        console.log(tuscias_masyvas);
+
+        //Elementų pridėjimas į masyvo priekį
+        //Rankinis būdas:
+        //tuscias_masyvas[0] = 'Pirmoji reikšmė';
+        // let naujas_masyvas = ['Pirmoji reikšmė'];
+
+        // for(let i = 0; i < tuscias_masyvas.length; i++) {
+        //     naujas_masyvas[naujas_masyvas.length] = tuscias_masyvas[i];
+        // }
+        // console.log(naujas_masyvas);
+        
+        //Pasinaudojant metodu:
+        tuscias_masyvas.unshift('Pirmoji reikšmė');
+
+        console.log(tuscias_masyvas);
+
+        //Ištrynimas iš masyvo:
+        //Komanda delete
+        //delete tuscias_masyvas[2];
+        
+        //splice() metodas:
+        tuscias_masyvas.splice(2, 1);
+
+        console.log(tuscias_masyvas);
+
+        //Elemento reikšmei pakeisti:
+        tuscias_masyvas[2] = 'Paskutinis elementas';
+        
+        console.log(tuscias_masyvas);
+        
+        //Global scope (Globali apimtis)
+        // let masyvas = ['Televizorius', 10, false, undefined, 50, 'Masyvo pabaiga'];
+
+        // if(true) {
+        //     //Blokinė apimtis
+        //     let x = 10;
+        //     console.log(masyvas);
+        //     masyvas = [];
+        // }
+        
+        // console.log(masyvas);
+        // console.log(x);
+    </script>
+</body>
+</html>

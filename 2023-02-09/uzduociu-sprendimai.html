@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        //Metam monetą. Monetos kritimo rezultatą imituojam rand() funkcija, kur 0 yra herbas, o 1 - skaičius. 
+        //Monetos metimo rezultatus išvedame į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H” 
+        //jeigu herbas. Suprogramuokite keturis skirtingus scenarijus kai monetos metimą stabdome:
+
+        //Iškritus herbui;
+        document.write('<h2>pirmoji užduotis</h2>');
+
+        //break komanda nutraukia ciklo veikimą
+        let rezultatas = '';
+
+        while(true) {
+            let skaicius = rand(0, 1);
+
+            if(skaicius === 1) {
+                rezultatas += 'S';
+            } else {
+                rezultatas += 'H';
+                break;
+            }
+        }
+
+        document.write(rezultatas);
+
+        //Tris kartus iškritus herbui;
+        document.write('<h2>Antroji užduotis</h2>');
+        
+        let counter = 0;
+        rezultatas = '';
+
+        while(true) {
+            let skaicius = rand(0, 1);
+
+            if(skaicius === 1) {
+                rezultatas += 'S';
+            } else {
+                rezultatas += 'H';
+                counter++;
+            }
+ 
+            if(counter > 2)
+                break;
+        }
+
+        document.write(rezultatas);
+
+        //Tris kartus iš eilės iškritus herbui;
+
+        document.write('<h2>Trečioji užduotis</h2>');
+        
+        counter = 0;
+        rezultatas = '';
+
+        while(true) {
+            let skaicius = rand(0, 1);
+
+            if(skaicius === 1) {
+                rezultatas += 'S';
+                counter = 0;
+            } else {
+                rezultatas += 'H';
+                counter++;
+            }
+ 
+            if(counter > 2)
+                break;
+        }
+
+        document.write(rezultatas);
+
+        document.write('<h2>Ketvirtoji užduotis</h2>');
+
+        //Kazys ir Petras žaidžiai šaškėm. Petras surenka taškų kiekį nuo 10 iki 20, 
+        //Kazys surenka taškų kiekį nuo 5 iki 25. Vienoje eilutėje išvesti žaidėjų vardus 
+        //su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”. 
+        //Taškų kiekį generuokite funkcija ​rand()​. Žaidimą laimi tas, kas greičiau surenka 222 taškus. 
+        //Partijas kartoti tol, kol kažkuris žaidėjas pirmas surenka 222 arba daugiau taškų.
+
+        let petras = 0;
+        let kazys = 0;
+
+        while(true) {
+            let p_taskai = rand(10, 20);
+            let k_taskai = rand(5, 25);
+
+            petras += p_taskai;
+            kazys += k_taskai;
+
+            if(p_taskai > k_taskai) {
+                document.write('<div>Partiją laimėjo Petras, surinkęs ', p_taskai, ' taškus</div>');
+            } else if (p_taskai === k_taskai) {
+                document.write('<div>Įvyko lygiosios</div>');
+            }else {
+                document.write('<div>Partiją laimėjo Kazys, surinkęs ', k_taskai, ' taškus</div>');
+            }
+
+            if(petras >= 222 || kazys >= 222) {
+                if(petras > kazys) {
+                    document.write(`<h4>Žaidimą laimėjo Petras. Jo taškai: ${petras}</h4>`);
+                } else if(petras === kazys) {
+                    document.write(`<h4>Įvyko lygiosios</h4>`);
+                } else {
+                    document.write(`<h4>Žaidimą laimėjo Kazys. Jo taškai: ${kazys}</h4>`);
+                }
+
+                break;
+            }
+        }
+
+        document.write(`<h5>Petro rezultatas: ${petras} Kazio rezultatas: ${kazys}</h4>`);
+
+        //Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami 
+        //rand() funkcija. Vinies ilgis 8.5cm (pilnai sulenda į lentą).
+
+        //“Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20 mm. 
+        //Suskaičiuokite kiek reikia smūgių.
+        
+        document.write('<h2>Penktoji užduotis</h2>');
+
+        let vinis = 425;
+        let smugiai = 0;
+
+        //for ciklas
+        // for(let i = 0; i < 100; i++) {
+        //     vinis -= rand(5, 20);
+        //     smugiai++;
+
+        //     if(vinis <= 0)
+        //         break;
+        // }
+
+        //while ciklas
+
+        while(vinis >= 0) {
+            vinis -= rand(5, 20);
+            smugiai++;
+        }
+
+        document.write('Smūgių viniui įkalti prireikė: ' + smugiai);
+
+        //“Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, 
+        //bet yra 50% tikimybė (pasinaudokite rand() funkcija tikimybei sumodeliuoti), 
+        //kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.
+
+        document.write('<h2>Šeštoji užduotis</h2>');
+
+        vinis = 425;
+        smugiai = 0;
+
+        while(vinis >= 0) {
+            if(rand(0, 1))
+                continue;
+
+            vinis -= rand(20, 30);
+            smugiai++;
+        }
+
+        document.write('Didelių smūgių prireikė: ' + smugiai);
+    </script>
+</body>
+</html>
