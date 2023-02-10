@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai 2023-02-10</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        //Sugeneruokite masyvą iš 30 elementų (indeksai nuo 0 iki 29), 
+        //kurių reikšmės yra atsitiktiniai skaičiai nuo 5 iki 25.
+
+        let masyvas = [];
+
+        for(let i = 0; i < 30; i++) {
+            //masyvas[masyvas.length] = rand(5, 25);
+            masyvas.push(rand(5, 25));
+        }
+
+        document.write('<h2>Pirmoji užduotis</h2>');
+
+        //Suskaičiuokite kiek masyve yra reikšmių didesnių už 10;
+        
+        //For of ciklas grąžina kiekvieną masyvo elemento reikšmę
+        // for(let reiksme of masyvas) {
+        //     console.log(reiksme);
+        // }
+
+        //For in ciklas grąžina kiekvieną masyvo elemento indeksą
+        // for(let indeksas in masyvas) {
+        //     console.log(indeksas);
+        // }
+        
+        let counter = 0;
+
+        for(let reiksme of masyvas) {
+            if(reiksme > 10)
+                counter++;
+        }
+
+        //Su paprastu for ciklu
+        // for(let i = 0; i < masyvas.length; i++) {
+        //     if(masyvas[i] > 10) 
+        //         counter++;
+        // }
+
+        document.write('Reišmių didesnių nei dešimt yra: ' + counter);
+
+        document.write('<h2>Antroji užduotis</h2>');
+        //Raskite didžiausią masyvo reikšmę ir jos indeksą arba indeksus jeigu yra keli;
+        
+        let max = 0;
+
+        for(let reiksme of masyvas) {
+            if(reiksme > max)
+                max = reiksme;
+        }
+
+        max = Math.max(...masyvas);
+
+        document.write('Didžiausia reikšmė:' + max);
+
+        let indeksai = [];
+
+        for(let indeksas in masyvas) {
+            if(masyvas[indeksas] === max)
+                indeksai.push(indeksas);
+        }
+
+        document.write(`<div>Didžiausios reikšmės indeksas(-ai): ${indeksai}</div>`);
+
+        document.write('<h2>Trečioji užduotis</h2>');
+        //Suskaičiuokite visų porinių (lyginių) indeksų reikšmių sumą;
+
+        let suma = 0;
+
+        for(let i in masyvas) {
+            if(i % 2 === 0)
+                suma += masyvas[i];
+        }
+
+        document.write(`<div>Lyginių indeksų reikšmių suma: ${suma}</div>`);
+
+        document.write('<h2>Ketvirtoji užduotis</h2>');
+        //Sukurkite naują masyvą, kurio reikšmės yra 1 uždavinio masyvo reikšmes minus tos reikšmės indeksas;
+
+        let naujas_masyvas = [];
+
+        for(let i in masyvas) {
+            naujas_masyvas.push(masyvas[i] - i);
+        }
+
+        document.write(`<div>Senas masyvas: ${masyvas}</div>`);
+        document.write(`<div>Naujas masyvas: ${naujas_masyvas}</div>`);
+
+        // console.log(masyvas);
+        // console.log(naujas_masyvas);
+
+        document.write('<h2>Penktoji užduotis</h2>');
+        //Papildykite masyvą papildomais 10 elementų su reikšmėmis nuo 5 iki 25, kad bendras masyvas padidėtų iki indekso 39;
+
+        for(let i = 0; i < 10; i++) {
+            naujas_masyvas[naujas_masyvas.length] = rand(5, 25);
+        }
+
+        console.log(naujas_masyvas);
+
+        document.write('<h2>Šeštoji užduotis</h2>');
+        //Iš masyvo elementų sukurkite du naujus masyvus. Vienas turi būti sudarytas iš neporinių indeksų reikšmių, o kitas iš porinių;
+
+        let pirmas_masyvas = [];
+        let antras_masyvas = [];
+
+        for(let i in masyvas) {
+            if(i % 2 === 0) {
+                antras_masyvas.push(masyvas[i]);
+            } else { 
+                pirmas_masyvas.push(masyvas[i]);
+            }
+        }
+
+        document.write(`<div>Pirmas masyvas: ${pirmas_masyvas}</div>`);
+        document.write(`<div>Antras masyvas: ${antras_masyvas}</div>`);
+
+        document.write('<h2>Septintoji užduotis</h2>');
+        //Pirminio masyvo elementus su poriniais indeksais padarykite 
+        //lygius 0 jeigu jie didesni už 15;
+
+        for(let i in masyvas) {
+            if(i % 2 === 0 && masyvas[i] > 15)
+                masyvas[i] = 0;
+        }
+
+        //console.log(masyvas);
+        document.write(`Gautas masyvas: ${masyvas}`);
+
+        document.write('<h2>Aštuntoji užduotis</h2>');
+
+        let pirmas_indeksas;
+
+        for(let i in masyvas) {
+            if(masyvas[i] > 10) {
+                pirmas_indeksas = i;
+                break;
+            } 
+        }
+        //console.log(pirmas_indeksas);
+        document.write(`Didesnės nei dešimt reikšmės pirmas indeksas: ${pirmas_indeksas}`);
+        
+        document.write('<h2>Devintoji užduotis</h2>');
+        //Iš masyvo ištrinkite visus elementus turinčius porinį indeksą;
+
+        console.log(masyvas);
+
+        for(let i = 0; i < masyvas.length; i++) {
+            masyvas.splice(i, 1);
+        }
+
+    </script>
+</body>
+</html>
