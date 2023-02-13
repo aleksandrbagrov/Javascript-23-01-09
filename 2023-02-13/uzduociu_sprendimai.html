@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        document.write('<h2>Trečia užduotis</h2>');
+        //Sugeneruokite masyvą, 
+        //kurio reikšmės atsitiktinės raidės A, B, C ir D, 
+        //o ilgis 200. Suskaičiuokite kiek yra kiekvienos raidės.
+
+        let masyvas = [];
+        let raides = 'ABCD';
+        let raidziuKiekiai = {
+            a: 0,
+            b: 0,
+            c: 0,
+            d: 0
+        };
+
+        for(let i = 0; i < 200; i++) {
+            let raide = raides[rand(0, raides.length - 1)];
+            masyvas[masyvas.length] = raide;
+
+            if(raide === 'A')
+                raidziuKiekiai.a++;
+
+            if(raide === 'B')
+                raidziuKiekiai.b++;
+
+            if(raide === 'C')
+                raidziuKiekiai.c++;
+
+            if(raide === 'D')
+                raidziuKiekiai.d++;
+        }
+
+        document.write(masyvas);
+
+        document.write(`A: ${raidziuKiekiai.a}, B: ${raidziuKiekiai.b}, C: ${raidziuKiekiai.c}, D: ${raidziuKiekiai.d}`);
+        
+        document.write('<h2>Ketvirta užduotis</h2>');
+
+        masyvas.sort();
+
+        document.write(`Išrūšiuotas masyvas:`, masyvas);
+
+        document.write('<h2>Penkta užduotis</h2>');
+
+        //Sugeneruokite 3 masyvus pagal 3 uždavinio sąlygą. 
+        //Sudėkite masyvus, sudėdami reiksmes pagal atitinkamus indeksus. 
+        //Paskaičiuokite kiek unikalių (po vieną, nesikartojančių) reikšmių 
+        //ir kiek unikalių kombinacijų gavote.
+
+        let masyvai = {
+            pirmasis: [],
+            antrasis: [],
+            treciasis: []
+        }
+
+        for(let i = 0; i < 200; i++) {
+            masyvai.pirmasis.push(raides[rand(0, raides.length - 1)]);
+            masyvai.antrasis.push(raides[rand(0, raides.length - 1)]);
+            masyvai.treciasis.push(raides[rand(0, raides.length - 1)]);
+        }
+
+        document.write(`Pirmas masyvas: ${masyvai.pirmasis}`);
+        document.write(`Antras masyvas: ${masyvai.antrasis}`);
+        document.write(`Trečias masyvas: ${masyvai.treciasis}`);
+
+        masyvas = [];
+
+        for(let i in masyvai.pirmasis) {
+            masyvas.push(masyvai.pirmasis[i] + masyvai.antrasis[i] + masyvai.treciasis[i]);
+        }
+
+        document.write(`Kombinacijų masyvas ${masyvas}`);
+
+        let counter = 0;
+        let laikinas = [];
+
+        for(let combo of masyvas) {
+            if(
+                combo != 'AAA' &&
+                combo != 'BBB' &&
+                combo != 'CCC' &&
+                combo != 'DDD'
+            )
+                counter++;
+
+            if(!laikinas.includes(combo))
+                laikinas.push(combo);
+        }
+
+        // console.log(masyvas);
+        // console.log(laikinas);
+
+        document.write(`Po vieną nesikartojančių reikšmių yra: ${counter} <br />`);
+        document.write(`Unikalių kombinacijų masyve yra: ${laikinas.length}`);
+
+        //Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai skaičiai 
+        //nuo 100 iki 999. Masyvų ilgiai 100. Masyvų reikšmės turi būti unikalios savo masyve (t.y. neturi kartotis).
+
+        document.write('<h2>Šešta užduotis</h2>');
+
+        masyvai = {
+            pirmasis: [],
+            antrasis: []
+        }
+
+        while(masyvai.pirmasis.length < 100) {
+            let pirmas = rand(100, 999);
+
+            if(!masyvai.pirmasis.includes(pirmas))
+                masyvai.pirmasis.push(pirmas);
+        }
+
+        while(masyvai.antrasis.length < 100) {
+            let antras = rand(100, 999);
+        
+            if(!masyvai.antrasis.includes(antras))
+                masyvai.antrasis.push(antras);
+        }
+
+        // console.log(masyvai.pirmasis.length);
+        // console.log(masyvai.antrasis.length);
+
+        document.write('Sugeneruoti masyvai:');
+        document.write(`<div>${masyvai.pirmasis}</div>`)
+        document.write(`<div>${masyvai.antrasis}</div>`);
+        
+
+        document.write('<h2>Septinta užduotis</h2>');
+        //Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, 
+        //kurios yra pirmame 6 uždavinio masyve, bet nėra antrame 6 uždavinio masyve.
+
+        masyvas.trecias = [];
+
+        for(let reiksme of masyvai.pirmasis) {
+            if(!masyvai.antrasis.includes(reiksme))
+                masyvas.trecias.push(reiksme);
+        }
+
+        document.write(`Gautas masyvas ${masyvas.trecias}`);
+
+        document.write('<h2>Aštunta užduotis</h2>');
+
+        //Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 6 uždavinio masyvuose.
+
+        masyvas.trecias = [];
+
+        for(let reiksme of masyvai.pirmasis) {
+            if(masyvai.antrasis.includes(reiksme))
+                masyvas.trecias.push(reiksme);
+        }
+
+        document.write(`Gautas masyvas ${masyvas.trecias}`);
+
+        document.write('<h2>Devinta užduotis</h2>');
+
+        //Sugeneruokite masyvą, kurio indeksus 
+        //sudarytų pirmo 6 uždavinio masyvo reikšmės, o jo reikšmės būtų iš antrojo masyvo.
+
+        masyvai.ketvirtas = [];
+
+        for(let i in masyvai.pirmasis) {
+            masyvai.ketvirtas[masyvai.pirmasis[i]] = masyvai.antrasis[i];
+        }
+
+        console.log(masyvai.ketvirtas);
+
+        document.write('<h2>Dešimta užduotis</h2>');
+
+        //Sugeneruokite 10 skaičių masyvą pagal taisyklę: 
+        //Du pirmi skaičiai- atsitiktiniai nuo 5 iki 25. 
+        //Trečias, pirmo ir antro suma. Ketvirtas- antro ir trečio suma. 
+        //Penktas trečio ir ketvirto suma ir t.t.
+
+        masyvas = [rand(5, 25), rand(5, 25)];
+
+        for(let i = 2; i < 10; i++) {
+            masyvas[masyvas.length] = masyvas[i - 2] + masyvas[i - 1];
+        }
+
+        document.write(`Gautas masyvas ${masyvas}`);
+
+    </script>
+</body>
+</html>

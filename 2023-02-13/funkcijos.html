@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcijos</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // Named function - Įvardinta funkcija
+        // Parameters - Funkcijoje priimami duomenys
+        function pirmojiFunkcija(pirmas, antras) {
+            console.log(pirmas);
+            console.log(antras);
+        }
+
+        //Funkcijos iššaukimas
+        //Iššaukimo metu perduodamos reikšmės vadinamos argumentais
+        pirmojiFunkcija('Labas', 'Pasauli');
+
+        // function masyvoGeneratorius(masyvas) {
+        //     while(masyvas.length < 100) {
+        //         let skaicius = rand(100, 999);
+            
+        //         if(!masyvas.includes(skaicius))
+        //             masyvas.push(skaicius);
+        //     }
+        // }
+
+        // let pirmas = [];
+        // let antras = [];
+
+        // masyvoGeneratorius(pirmas);
+        // masyvoGeneratorius(antras);
+
+        // console.log(pirmas);
+        // console.log(antras);
+
+        //Iš funkcijos grąžinamas rezultatas
+        //Return komanda nurodo ką funkcija turėtų grąžinti iš savęs
+        function masyvoGeneratorius() {
+            let masyvas = [];
+
+            while(masyvas.length < 100) {
+                let skaicius = rand(100, 999);
+            
+                if(!masyvas.includes(skaicius))
+                    masyvas.push(skaicius);
+            }
+            
+            return masyvas;
+        }
+
+        let pirmas = masyvoGeneratorius();
+        let antras = masyvoGeneratorius();
+
+        //console.log(masyvoGeneratorius());
+        //console.log(masyvoGeneratorius());
+
+        //Callback = atsišaukimas
+        function callback(veiksmas) {
+            veiksmas();
+        }
+
+        //Anoniminė funkcija (Anonymous function), perduodama kaip argumentas 
+        callback(function () {
+            console.log('Atsišaukimas įvyko');
+        });
+
+        let funkcija = function () {
+            console.log('Anoniminė funkcija priskirta prie kintamojo');
+        }
+        
+        funkcija();
+
+        //Self invoking function - Savaime išssišaukianti funkcija
+
+        (function () {
+            console.log('Savaime išsišaukinti funkcija');
+        })();
+
+        //Ciklas funkcijos pagalba
+        function loop(n) {
+            if(n < 10)
+                loop(n + 1);
+
+            console.log('Ciklas sukasi');
+        }
+
+        loop(1);
+    </script>
+</body>
+</html>
