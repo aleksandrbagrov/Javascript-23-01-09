@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript metodai masyvams</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        const masyvas = [];
+
+        for(let i = 0; i < 100; i++) {
+            masyvas.push(rand(5, 30));
+        }
+
+        //Sukurkite naują masyvą prie kiekvienos masyvo reikšmės pridėdami skaičių 2
+        //console.log(masyvas);
+
+        const naujasMasyvas = [];
+        
+        for(const reiksme of masyvas) {
+            naujasMasyvas[naujasMasyvas.length] = reiksme + 2;
+        }
+
+        //console.log(naujasMasyvas);
+
+        //Map metodas apdoroja masyvą cikle ir perduoda reikšmę į atsišaukimo funkciją
+        //Map metodas yra skirtas sukurti naują masyvą priskiriant jam reikšmes iš atsišaukimo funkcijos
+
+        // const mapMasyvas = masyvas.map(function (reiksme) {
+        //     return reiksme + 2;
+        // });
+
+        // console.log(mapMasyvas);
+
+        const arrMasyvas = masyvas.map(reiksme => reiksme + 2);
+
+        //console.log(arrMasyvas);
+
+        //Sukurkite naują masyvą pasinaudodami senuoju ir pakeiskite elementų reikšmes į 0, jei ši yra didesnė nei 20
+        
+        const map = (funkcija, masyvas) => {
+            const naujasMasyvas = [];
+
+            for(let i = 0; i < masyvas.length; i++) {
+                naujasMasyvas.push(funkcija(masyvas[i], i));
+            }
+
+            return naujasMasyvas;
+        }
+
+        const customMasyvas = map(reiksme => reiksme > 20 ? 0 : reiksme, masyvas);
+
+        console.log(customMasyvas);
+
+        //forEach() paleidžia ciklą masyvo reikšmėms susigrąžinti
+        //tačiau negrąžina reikšmių į naują masyvą
+        customMasyvas.forEach(reiksme => console.log(reiksme));
+
+        //filter() metodas skirtas išfiltruoti reikšmes iš masyvo
+        //Sąlyga: Masyve suraskite visas reikšmes kurios yra didesnės nei 20
+        //Aprašymas su klasikine funkcija:
+        // const filtruotasMasyvas = masyvas.filter(function (reiksme) {
+        //     return reiksme > 20;
+        // });
+        const filtruotasMasyvas = masyvas.filter(reiksme => reiksme > 20);
+
+        console.log(filtruotasMasyvas);
+
+        //Sąlyga: Masyve suraskite visas reikšmes kurios yra didesnės nei 20 ir jų indeksai yra lyginiai
+
+        const masyvasPagalAntraSalyga = masyvas.filter((reiksme, index) => (reiksme > 20 && index % 2 === 0));
+
+        console.log(masyvasPagalAntraSalyga);
+
+        //Sąlyga: Suraskite pirmą elementą masyve, kurio reikšmė mažesnė negu 10
+        //find() - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+
+        const pirmojiReiksme = masyvas.find(reiksme => reiksme < 10);
+
+        console.log(pirmojiReiksme);
+
+        //Sąlyga: Suraskite pirmą indeksą masyve, kurio reikšmė mažesnė negu 10
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+
+        const pirmasisIndeksas = masyvas.findIndex(reiksme => reiksme < 10);
+
+        console.log(pirmasisIndeksas);
+
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLast
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLastIndex
+    </script>
+</body>
+</html>

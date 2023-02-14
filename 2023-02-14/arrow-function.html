@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Funkcija</title>
+</head>
+<body>
+    <script>
+        let funkcija = function () {
+            console.log('Anoniminė funkcija priskirta prie kintamojo');
+        }
+        
+        funkcija();
+
+        //Arrow funkcijos aprašymas
+        let arrowFunkcija = (parametras) => {
+            console.log(parametras);
+        }
+
+        arrowFunkcija('Sveiki, jums sako arrow funkcija');
+
+        let callback = (cb) => {
+            cb();
+        }
+
+        callback(() => {
+            console.log('Pasisveikinimas iš arrow funkcijos callbacko');
+        });
+        
+
+        let callback2 = (cb) => {
+            cb('BMW');
+        }
+
+        callback2(automobilis => {
+            console.log('Jūsų automobilis yra:' + automobilis);
+        });
+        
+        let callback3 = (cb) => {
+            cb('BMW', '1998');
+        }
+
+        callback3((automobilis, metai) => {
+            console.log('Jūsų automobilis yra: ' + automobilis + ' Jis yra ' + metai + ' metų gamybos');
+        });
+
+        //Funkcijos įvardinimas ir jos perdavimas
+
+        // function pranasas(automobilis, metai) {
+        //     console.log('Jūsų automobilis yra: ' + automobilis + ' Jis yra ' + metai + ' metų gamybos');
+        // }
+
+        // callback3(pranasas);
+
+        //Su grąžinama reikšme
+
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        console.log(multiply(10, 3));
+
+        //Arrow funkcijos aprašymas su grąžinama reikšme
+
+        const arrMultiply = (a, b) => {
+            return a * b;
+        }
+
+        console.log(arrMultiply(5, 5));
+
+        //Jeigu funkcijoje atliekamas veiksmas yra vienos eilutės ilgio
+        const arrMult = (a, b) => a * b;
+
+        console.log(arrMult(8, 12));
+    </script>
+</body>
+</html>
