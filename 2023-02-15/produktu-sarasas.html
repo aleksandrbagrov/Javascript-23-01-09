@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produktai</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Pavadinimas</th>
+                <th>Kiekis</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        const produktai = [
+            {
+                pavadinimas: 'Skalbimo mašina',
+                kiekis: 5
+            },
+            {
+                pavadinimas: 'Televizorius',
+                kiekis: 30
+            },
+            {
+                pavadinimas: 'Šaldytuvas',
+                kiekis: 13
+            },
+            {
+                pavadinimas: 'Dulkių siurblys',
+                kiekis: 5
+            }
+        ];
+
+        const rodytiProduktus = () => {
+            document.querySelector('tbody').innerHTML = '';
+
+            produktai.forEach((produktas, indeksas) => {
+                document.querySelector('tbody').innerHTML += `
+                    <tr>
+                        <td>${produktas.pavadinimas}</td>
+                        <td>${produktas.kiekis}</td>
+                        <td><button onclick="trinti(${indeksas})" class="btn btn-danger">Trinti</button></td>
+                    </tr>
+                `;
+            });
+        }
+
+        const trinti = (id) => {
+            produktai.splice(id, 1);
+            rodytiProduktus();
+        }
+
+        //const trinti = (id) => {
+            //remove() metodas yra priskirtas prie kiekvieno elemento ir jo pagalba galima jį pašalinti
+            //document.querySelector(`tbody tr:nth-child(${id + 1})`).remove();
+            //console.log(`tbody tr:nth-child(${id + 1})`);
+        //}
+
+        rodytiProduktus();
+    </script>
+</body>
+</html>

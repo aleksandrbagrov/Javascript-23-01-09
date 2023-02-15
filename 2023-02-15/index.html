@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat quo ipsum dolor nesciunt. Maxime officia dolor, voluptatibus cupiditate sapiente itaque? Eius numquam neque sapiente consectetur eum ab enim, itaque nam est quod. Hic doloribus consequuntur libero, ducimus sunt dignissimos voluptatibus quis adipisci voluptate unde cum iusto nisi exercitationem nulla alias temporibus ea delectus laboriosam fugit minima. Amet eveniet minus sequi? Distinctio eveniet fugiat inventore hic mollitia dicta laudantium facilis laborum? Quis excepturi, labore deleniti earum iusto non rerum dolore pariatur minima dicta modi similique sapiente, delectus ipsa quo enim animi doloremque natus iste magnam amet totam? Excepturi, iusto. Dolore, commodi.
+    <div style="margin-top: 25px;">
+        <button onclick="changeColor()">Spalva</button>
+        <button class="eventListener">Dydis</button>
+    </div>
+    <script>
+        //DOM - Document Object Model
+        //console.log(document);
+
+        //DOM replikuotas pavyzdys:
+        // const dom = {
+        //     value: '',
+        //     //Objektiniame programavime funkcija yra vadinama metodu
+        //     setValue: function(reiksme) {
+        //         //this raktažodis grąžina objekta kuriame yra patalpintas metodas
+        //         //console.log(this);
+
+        //         this.value = reiksme;
+
+        //         return this;
+        //     },
+        //     deleteValue: function() {
+        //         delete this.value;
+
+        //         return this;
+        //     },
+        //     children: {
+        //         style: {
+        //             color: ''
+        //         }
+        //     }
+        // }
+
+        // //dom.value = 'Test';
+        // dom.setValue('Priskirtas tekstas iš argumento').deleteValue().setValue('Po ištrynimo pridėta reikšmė');
+
+        // dom.children.style.color = 'black';
+        // console.log(dom);
+
+
+
+        //Stiliaus modifikavimas
+        document.querySelector('body').style.color = 'red'; 
+        document.querySelector('body').style.backgroundColor = 'black'; 
+
+        function changeColor() {
+            if(document.querySelector('body').style.color === 'red') {
+                document.querySelector('body').style.backgroundColor = 'green';
+                document.querySelector('body').style.color = 'white';
+            } else {
+                document.querySelector('body').style.color = 'red'; 
+                document.querySelector('body').style.backgroundColor = 'black'; 
+            }
+        }
+        
+        //Įvykio priskyrimas pasitelkiant metodą addEventListener
+        document.querySelector('.eventListener').addEventListener('click', function() {
+            const body = document.querySelector('body');
+
+            if(body.style.fontSize === '') {
+                body.style.fontSize = '18px';
+            } else {
+                const oldvalue = +body.style.fontSize.replace('px', '');
+                body.style.fontSize = oldvalue + 2 + 'px';
+                
+                //Būdai konvertuoti stringą į skaičių
+                //1. + simbolis prieš reikšmę arba kintamajį
+                //2. parseInt() konvertuoja stringą į sveiką skaičių
+                //3. parseFloat() konvertuoja stringą į skaičių po kablelio
+
+                // const x = '10';
+                // const y = '20';
+
+                // console.log(+x + +y);
+                // console.log(parseInt(x) + parseInt(y));
+            }
+        });
+    </script>
+</body>
+</html>
