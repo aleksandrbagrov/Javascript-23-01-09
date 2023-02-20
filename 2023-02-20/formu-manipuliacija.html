@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formų manipuliacija</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body style="height: 1000px;">
+    <div class="container py-5">
+        <h2>Pirmas pavyzdys:</h2>
+        <input type="text" class="form-control input" placeholder="Įveskite frazę" onkeyup="printValue(event)" />
+        <div class="rezultatas"></div>
+
+        <h2 class="mt-5">Antras pavyzdys:</h2>
+        <form onsubmit="formaSiunciama(event)">  
+            <div class="mb-3">
+                <label>Jūsų vardas:</label>
+                <input type="text" name="name" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label>Tema:</label>
+                <input type="text" name="subject" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label>Žinutė:</label>
+                <textarea name="message" class="form-control"></textarea>
+            </div>
+            <button class="btn btn-primary">Siųsti</button>
+            <div class="rezultatas"></div>
+        </form>
+    </div>
+    <script>
+        const printValue = (e) => {
+            //Value savybė grąžina formos elemento reikšmę kuri įvesta iššaukus funkciją
+            //const value = document.querySelector('.input').value;
+            const value = e.target.value;
+            //console.log(e.target.value);
+
+            document.querySelector('.rezultatas').textContent = value;
+        }
+
+        const formaSiunciama = (e) => {
+            //Norint sustabdyti standartinį HTML veikimą:
+            e.preventDefault();
+
+            const name = e.target.querySelector('[name="name"]').value;
+            const subject = e.target.querySelector('[name="subject"]').value;
+            const message = e.target.querySelector('[name="message"]').value;
+
+            const result = `
+                <div class="alert alert-success pt-5">
+                    <h3>Ačiū Jūsų duomenys gauti!</h3>
+                    <p>Netrukus su jumis susisieksime. Patvirtinkite ar duomenys teisingi:</p>
+                    <div>Vardas: ${name}</div>
+                    <div>Tema: ${subject}</div>
+                    <div>Žinutė: ${message}</div>
+                </div>
+            `;
+
+            e.target.querySelector('.rezultatas').innerHTML = result;
+        }
+    </script>
+</body>
+</html>

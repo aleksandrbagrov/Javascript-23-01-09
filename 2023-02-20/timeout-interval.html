@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout, setInterval</title>
+</head>
+<body>
+    <script>
+        //Kuomet veiksmą reikia atlikti vieną kartą po atsilikimo
+        setTimeout(
+            () => {
+                console.log('Suveikė');
+            },
+            5000
+        )
+        
+        //Kuomet norime, jog veiksmas kartotūsi kas norodytą laiko tarpą
+        setInterval(
+            () => {
+                console.log('Sveikė intervalas');
+            },
+            1000
+        );
+                
+        //Kuomet bandome nutraukti intervalą:
+        // let x = 0;
+
+        // setInterval(
+        //     () => {
+        //         if(x > 5)
+        //             return;
+                
+        //         console.log('Sveikė intervalas');
+        //         x++;
+        //     },
+        //     1000
+        // )
+
+        const intervalID = setInterval(
+            () => {
+                console.log('Sveikė prieš išvalymą intervalas');
+            },
+            1000
+        );
+
+        clearInterval(intervalID);
+    </script>
+</body>
+</html>
