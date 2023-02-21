@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of games</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+        #game {
+            width: 75%;
+            height: 100vh;
+            background: black;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            transition: all 0.2s ease-in-out 0s;
+        }
+
+        .results {
+            width: 25%;
+            padding-top: 20px;
+        }
+        .game-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .results h4 {
+            margin: 0 0 10px;
+        }
+
+        .game-over {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: black;
+        }
+        .timer {
+            position: absolute;
+            color: white;
+            right: 15px;
+            top: 15px;
+            font-size: 26px;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div id="game">
+            <div class="box"></div>
+            <div class="game-over"></div>
+            <div class="timer"></div>
+        </div>
+        <div class="results"></div>
+    </div>
+    <script>
+        //window.innerWidth //Lango plotis
+        //window.innerHeight //Lango aukštis
+
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        
+        const game = document.querySelector('#game');
+        const box = document.querySelector('.box');
+        const results = document.querySelector('.results');
+        const colors = ['yellow', 'blue', 'red', 'green'];
+        // const width = game.offsetWidth;
+        // const height = game.offsetHeight;
+        const boxWidth = 50;
+        const boxHeight = 50;
+        const roundLength = 2;
+        const rounds = 10;
+        const sound = new Audio('sound.wav');
+
+        let width = game.offsetWidth;
+        let height = game.offsetHeight;
+        let interval = 0;
+        let roundsPassed = 0;
+        let playerPoints = 0;
+        let roundPointsPlayer = 0;
+        let clicked = false;
+
+        function launchGame() {
+            const gameID = setInterval(() => {
+                clicked = false;
+
+                if(roundsPassed === rounds) {
+                    let computerPoints = (roundLength * rounds) - playerPoints;
+                    //console.log(computerPoints, playerPoints);
+                    if(computerPoints > playerPoints) {
+                        game.querySelector('.game-over').innerHTML = `Žaidimą laimėjo: Kompiuteris`;
+                    } else if (computerPoints === playerPoints) {
+                        game.querySelector('.game-over').innerHTML = `Įvyko lygiosios`;
+                    } else {
+                        game.querySelector('.game-over').innerHTML = `Žaidimą laimėjo: Žaidėjas`;
+                    }
+
+                    game.querySelector('.game-over').innerHTML += `<div>
+                        <button onclick="repeatGame()">Pradėti iš naujo</button>
+                    </div>`;
+
+                    game.querySelector('.game-over').style.display = 'block';
+
+                    return clearInterval(gameID);
+                }
+
+                box.style.backgroundColor = colors[rand(0, colors.length - 1)];
+                box.style.top = rand(0, height - boxHeight) + 'px';
+                box.style.left = rand(0, width - boxWidth) + 'px';
+                game.querySelector('.timer').textContent = roundLength - interval;
+
+                //Roundo pabaiga
+                if(interval >= roundLength) {
+                    results.innerHTML += `<h4>Žaidėjas: ${roundPointsPlayer}, Kompiuteris: ${roundLength - roundPointsPlayer}</h4>`;
+
+                    interval = 0;
+                    roundPointsPlayer = 0; 
+                    roundsPassed++;
+                }
+
+                interval++;
+            }, 1000);
+        }
+
+        function repeatGame() {
+            interval = 0;
+            roundsPassed = 0;
+            playerPoints = 0;
+            roundPointsPlayer = 0;
+
+            game.querySelector('.game-over').style.display = 'none';
+            results.innerHTML = '';
+
+            launchGame();
+        }
+
+        box.addEventListener('click', () => {
+            if(clicked) return;
+
+            clicked = true;
+            playerPoints++;
+            roundPointsPlayer++;
+
+            sound.pause();
+            sound.currentTime = 0;
+            sound.volume = 0.2;
+            sound.play();
+        });
+        
+        window.addEventListener('resize', () => {
+            width = game.offsetWidth;
+            height = game.offsetHeight;
+        });
+
+        launchGame();
+    </script>
+</body>
+</html>
