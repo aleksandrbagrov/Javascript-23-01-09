@@ -65,6 +65,13 @@
                 document.querySelector('.rezultatas').innerHTML = `<img src="${atsakymas.message}" alt="">`;
             });
         }
+
+
+        fetch('https://dog.ceo/api/breeds/image/random')
+        .then((atsakymas) => atsakymas.json())
+        .then((atsakymas) => answer(atsakymas, breed));
+
+
     </script>
 </body>
 </html>

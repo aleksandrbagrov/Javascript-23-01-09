@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async - Await</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        //Await komanda galima tik:
+        //Asinchroninėje funkcijoje
+        //Modulyje
+
+        async function palaukimas() {
+            const rezultatas = new Promise((gauta, negauta) => {
+                setTimeout(() => {
+                    if(rand(0, 1)) {
+                        gauta('Siunta sėkmingai pristatyta');    
+                    } else {
+                        negauta('Nepavyko pristatyti siuntos');
+                    }
+                }, 3000);
+            });
+
+            return rezultatas;
+        } 
+
+        async function palaukimoIssaukimas() {
+            // console.log('Užklausa paleista');
+
+            // console.log(await palaukimas());
+
+            // console.log('Kodas baigtas');
+            
+            try {
+                //Tikriname ar įvyks klaida
+                console.log(await palaukimas());
+
+                console.log('Klaida neįvyko');
+            } catch(klaida) {
+                //Atliekame veiksmus jeigu įvyko klaida
+                console.log(klaida);
+            }
+        }
+
+        palaukimoIssaukimas();
+    
+        // fetch('https://google.com')
+        // .then(resp => resp.text())
+        // .then(resp => {
+        //     fetch('https://yahoo.com')
+        //     .then(resp => resp.text())
+        //     .then(resp => {
+        //         fetch('https://apple.com')
+        //         .then(resp => resp.text())
+        //         .then(resp => {
+        //             fetch('https://delfi.lt')
+        //             .then(resp => resp.text())
+        //             .then(resp => {
+        //                 //Callback hell
+        //                 //Atsišaukimų pragaras
+        //             });
+        //         });
+        //     });
+        // });
+
+        //Asinchronines funkcijos pagalba
+        // async function kurtiUzklausas() {
+        //     const google = await fetch('https://google.com');
+        //     const googleResult = await google.text();
+
+        //     const yahoo = await fetch('https://yahoo.com');
+        //     const yahooResult = await yahoo.text();
+    
+        //     const apple = await fetch('https://apple.com');
+        //     const appleResult = await apple.text();
+
+        //     const delfi = await fetch('https://delfi.lt');
+        //     const delfiResult = await delfi.text();
+        // }
+
+        // kurtiUzklausas();
+
+        
+    </script>
+</body>
+</html>
