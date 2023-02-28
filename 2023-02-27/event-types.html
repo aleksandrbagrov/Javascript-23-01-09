@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div onclick="test(event)">Elementas</div>
+    <script>
+        fetch('https://raw.githubusercontent.com/viliusramulionis/PHP-FULL-STACK-11-07-22/main/2023-01-24/failai/tekstas.txt')
+        .then(resp => resp.text())
+        .then(resp => {
+            console.log(resp);
+            document.querySelector('body').innerHTML = '<button onclick="test(event)">Paspausk</button>';
+
+            //document.querySelector('button').addEventListener('click', () => console.log('Pasispaudė'));
+        });
+
+        function test(e) {
+            console.log(e.target);
+        }
+    </script>
+</body>
+</html>
