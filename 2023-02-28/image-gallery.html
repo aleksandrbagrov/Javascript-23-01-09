@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Šuniukų nuotraukų galerija</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .rezultatas {
+            max-width: 768px;
+            margin: 0 auto;
+        }
+        .rezultatas img {
+            width: 33.333333%;
+        }
+        .current-page span {
+            display: block;
+            padding: 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="rezultatas"></div>
+    <div class="puslapiavimas"></div>
+    <script>
+        const limit = 9;
+        const rezultatas = document.querySelector('.rezultatas');
+        let page = 1;
+        let data = false;
+        let totalPages = 0;
+
+        fetch('https://dog.ceo/api/breed/hound/images/')
+        .then(resp => resp.json())
+        .then(resp => {
+            // data = resp.message;
+            data = resp.message.slice(0, 30);
+            totalPages = Math.ceil(data.length / limit);
+
+            listImages();
+            pagination();
+        });
+
+        function listImages() {
+            rezultatas.innerHTML = '';
+            let resultsLimit = limit * page;
+            let condition = resultsLimit > data.length ? data.length : resultsLimit;
+
+            for(let i = (limit * page) - limit; i < condition; i++) {
+                rezultatas.innerHTML += `<img src="${data[i]}" />`; 
+            }
+        }
+
+        function pagination() {
+            document.querySelector('.puslapiavimas').innerHTML = `
+                <ul class="pagination justify-content-center my-3">
+                    <li class="page-item ${page === 1 ? 'disabled' : ''}">
+                        <a class="page-link prev-page" onclick="goToPage(${page - 1})">Buvęs puslapis</a>
+                    </li>
+                    <li class="page-item current-page">
+                        <span>${page} / ${totalPages}</span>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link next-page ${page === totalPages ? 'disabled': '' }" onclick="goToPage(${page + 1})">Sekantis puslapis</a>
+                    </li>
+                </ul>
+            `;
+        }
+
+        function goToPage(target) {
+            page = target;
+
+            pagination();
+
+            listImages();
+        }
+
+        
+    </script>
+</body>
+</html>
