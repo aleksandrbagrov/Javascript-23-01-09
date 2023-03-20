@@ -1,0 +1,20 @@
+{
+  "name": "2023-03-14",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "nodemon": "^2.0.21"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0"
+  }
+}

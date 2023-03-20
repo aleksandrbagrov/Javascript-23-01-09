@@ -8,10 +8,8 @@
 // console.log(os.homedir());
 // console.log(os.freemem());
 // console.log(os.cpus());
-
 import readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
-
 // const input = process.stdin;
 // const output = process.stdout;
 

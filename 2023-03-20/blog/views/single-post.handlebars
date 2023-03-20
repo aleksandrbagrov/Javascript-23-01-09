@@ -1,0 +1,11 @@
+{{#if message}}
+    <div class="alert alert-danger">{{message}}</div>
+{{/if}}
+
+{{#if post}}
+    <h1>{{post.title}}</h1>
+    <img src="{{post.photo}}" alt="{{post.title}}" />
+    <div class="content">
+        {{post.content}}
+    </div>
+{{/if}}
