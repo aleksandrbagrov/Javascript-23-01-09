@@ -1,0 +1,31 @@
+<h1>Registruoti vartotojai</h1>
+{{#if message}}
+    <div class="alert alert-danger">{{message}}</div>
+{{/if}}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Vardas</th>
+            <th>Pavardė</th>
+            <th>El. pašto adresas</th>
+            <th>Slaptažodis</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each data}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{last_name}}</td>
+                <td>{{email}}</td>
+                <td>{{password}}</td>
+                <td>
+                    <a href="/edit-user/{{@key}}" class="btn btn-primary">Redaguoti</a>
+                    {{#unless current}}
+                        <a href="/delete-user/{{@key}}" class="btn btn-danger">Ištrinti</a>
+                    {{/unless}}
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
