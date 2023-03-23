@@ -1,0 +1,40 @@
+[
+    {
+        "name": "Jokubas",
+        "last_name": "Žilinskas",
+        "email": "jokubas2@gmail.com",
+        "password": "12345"
+    },
+    {
+        "name": "Keistas",
+        "last_name": "Vardas",
+        "email": "keistas@vardas.lt",
+        "password": "1234"
+    },
+    {
+        "name": "Aleksandras",
+        "last_name": "Makedonietis",
+        "email": "aleksandras@gmail.com",
+        "password": "1234"
+    },
+    {
+        "name": "awdawd",
+        "last_name": "awdawd",
+        "email": "awdawd@gmail.com",
+        "password": "awdawdawd"
+    },
+    {
+        "name": "awdawd",
+        "last_name": "awdawd",
+        "email": "vilius@bit.lt4",
+        "password": "1234",
+        "photo": "uploads/1679585577401-943200914.png"
+    },
+    {
+        "name": "awdawdawd",
+        "last_name": "awdawdawdawd",
+        "email": "vilius@test.lt",
+        "password": "1234",
+        "photo": "uploads/1679585594634-636208604.png"
+    }
+]
