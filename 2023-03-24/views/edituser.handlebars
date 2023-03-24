@@ -1,0 +1,23 @@
+<h2>Vartotojo redagavimas</h2>
+{{#if message}}
+    <div class="alert alert-danger">{{message}}</div>
+{{/if}}
+<form method="POST">
+    <div class="mb-3">
+        <label>Vardas:</label>
+        <input type="text" name="name" class="form-control" value="{{currentUser.name}}" />
+    </div>
+    <div class="mb-3">
+        <label>Pavardė:</label>
+        <input type="text" name="last_name" class="form-control" value="{{currentUser.last_name}}" />
+    </div>
+    <div class="mb-3">
+        <label>El. pašto adresas:</label>
+        <input type="email" name="email" class="form-control" value="{{currentUser.email}}" />
+    </div>
+    <div class="mb-3">
+        <label>Slaptažodis:</label>
+        <input type="text" name="password" class="form-control" value="{{currentUser.password}}" />
+    </div>
+    <button class="btn btn-primary">Išsaugoti</button>
+</form>
